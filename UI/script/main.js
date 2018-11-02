@@ -6,3 +6,6 @@ function confirm_request(){
         alert("Your Request has been saved");
     }
 }
+function open_profile(){
+    window.location.href='profile.html';
+}
