@@ -7,7 +7,7 @@
     <title>SendIT Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
-    <script src="./script/main.js"></script>
+   
 </head>
 
 <body class="home-page-body">
@@ -29,20 +29,20 @@
                     <div class="form-header">
                         Sign In
                     </div>
-                    <form>
+                    <form id="form"  onsubmit="return(check_form())" action="orders.html">
 
                         <div class="input_group">
                            
-                            <input type="email" name="email" id="email" placeholder="myemail@gmail.com">
+                            <input type="email" name="email" id="email" placeholder="myemail@gmail.com" required>
 
                         </div>
 
                         <div class="input_group">
                             
-                            <input type="password" name="password" id="password" placeholder="password">
+                            <input type="password" name="password" id="password" placeholder="password" required>
 
                         </div>
-                        <div><button type="button" onclick="window.location.href='orders.html'">Sign In</button></div>
+                        <div><button id="submit" type="submit"   >Sign In</button></div>
                         <div class="add-user">
                             <p><img src="./images/add.png"/><a href="registration.html"><span class="register">Register</span>
                             </a></p>
@@ -54,6 +54,7 @@
 
         </article>
     </section>
+    <script src="./script/main.js"></script>
 </body>
 
 </html>
