@@ -23,25 +23,30 @@
     </header>
     <section>
         <article>
-            <div class="login-container">
+            <div class="login-container" id="registration_form">
                
                 <div class="form_container">
                     <div class="form-header">
                         Sign Up
                     </div>
-                    <form>
+                    <form method="POST">
 
                         <div class="input_group">
                            
-                            <input type="email" name="email" id="email" placeholder="myemail@gmail.com">
+                            <input type="email" name="email" id="email" placeholder="myemail@gmail.com" required>
                         </div>
 
                         <div class="input_group">
                             
-                            <input type="password" name="password" id="password" placeholder="password">
+                            <input type="password" name="password" id="password" placeholder="password" required>
 
                         </div>
-                        <div><button type="submit">Sign UP</button></div>
+                        <div class="input_group">
+                            
+                            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirm password" required>
+
+                        </div>
+                        <div><button type="submit" onclick="add_record()">Sign UP</button></div>
                         <div class="add-user">
                             <p><img src="./images/login1.png"/><a href="login.html"><span class="register">Login</span>
                             </a></p>
