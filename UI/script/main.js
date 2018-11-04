@@ -4,6 +4,17 @@ function open_orders(){
 function redirect_edit(){
     window.location.href='edit.html';
 }
+function enter_location(elem){
+    myid=elem.id;
+    
+    var newlocation=prompt("Enter the present parcel location!");
+    
+   if(newlocation!==null){
+       
+       document.getElementById(myid).innerHTML =newlocation;
+   }
+    alert("location has been updated");
+}
 function confirm_request(){
     if(window.confirm("This order might cost you some money, Are you sure you want to continue?")){
         alert("Your Request has been saved");
@@ -44,18 +55,25 @@ function check_empty(){
     if(document.getElementById('email').value ==="" || document.getElementById('password').value===""){
         alert("All fields have to be filled!");
         
-    } 
-    else {
-        
-        document.getElementsById('form').submit();
-        alert("Form submitted successfully...");
-        // window.location.href='orders.html';
     }
+    
+}
+
+function redirect_user(myform){
+    if(myform.email.value ==="admin@admin.com" ){
+        alert('logging in as admin...')
+        return window.location.href='adminDashboard.html';
+    }
+    else{
+        alert('logging in as user...')
+        return window.location.href='orders.html';
+    }
+}
 
 function confirm_password(){
     if(document.getElementById('confirmpassword').value !==document.getElementById('password').value!=="" ){
         alert('Password mismatch');
     }
 }
-}
+
 
