@@ -155,14 +155,14 @@ button{
 
 /* table styles */
 
-.table-container{
+.table-container {
     border: solid 2px black;
     overflow-x: scroll;
     overflow-y: auto;
     padding-top: 0vh;
     padding-bottom: 0vh;
-    width: 60%;
-    height: 72vh;
+    width: 70%;
+    height: 80vh;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -217,6 +217,39 @@ tfoot td .create_order :hover {
 tfoot td span:hover {
     background-color: #aaa;
     border:solid 2px #040404;
+}
+.details{
+    border: solid 2px black;
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    width: 50%;
+    height: 70vh;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    margin-top: 10vh;
+    margin-bottom: 13vh;
+    background-image: url('../images/delivery.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    line-height: 3;
+    border:solid 2px gray;
+}
+
+.details .add-user{
+    line-height: 1.5;
+}
+.details td{
+   width: 25px;
+}
+#separator{
+    text-align: left;
+    font-weight: bold;
+    font-size: 100%;
 }
 .input-group{
     margin-bottom: 1rem;
@@ -312,6 +345,16 @@ input{
     border-top:solid 2px #040404;
     text-align: center;
 }
+.dashboard button{
+    background-color: rgba(0, 0, 0, 0.8);
+   
+}
+tbody select{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+    height: 40px;
+}
+
 @media only screen and (max-width: 413px) {
     .login_status{
         opacity: 0;
