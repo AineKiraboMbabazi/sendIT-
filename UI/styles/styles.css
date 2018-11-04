@@ -345,6 +345,16 @@ input{
     border-top:solid 2px #040404;
     text-align: center;
 }
+.dashboard button{
+    background-color: rgba(0, 0, 0, 0.8);
+   
+}
+tbody select{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+    height: 40px;
+}
+
 @media only screen and (max-width: 413px) {
     .login_status{
         opacity: 0;

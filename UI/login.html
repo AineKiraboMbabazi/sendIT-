@@ -17,7 +17,7 @@
             <a href="index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-            <img class="icon" src="images/admin2.png" /><br/>Admin
+            <img class="icon" src="images/admin2.png" /><br/>User
             
         </div>
     </header>
@@ -29,7 +29,7 @@
                     <div class="form-header">
                         Sign In
                     </div>
-                    <form id="form"  onsubmit="return(check_form())" action="orders.html">
+                    <form id="form" action="orders.html"  >
 
                         <div class="input_group">
                            
@@ -42,8 +42,8 @@
                             <input type="password" name="password" id="password" placeholder="password" required>
 
                         </div>
-                        <div><button id="submit" type="submit"   >Sign In</button></div>
-                        <div class="add-user">
+                        <div><button id="submit" type="submit" onclick="redirect_user(this.form); check_empty()"  >Sign In</button></div>
+                        <div class="add-user" >
                             <p><img src="./images/add.png"/><a href="registration.html"><span class="register">Register</span>
                             </a></p>
                         </div>
