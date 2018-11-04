@@ -1,7 +1,7 @@
 # sendIT-
 SendIT is a courier service provider that enable users to create parcel delivery orders, view delivery parcel delivery order history, Edit parcel delivery order, cancel parcel delivery order, view details of a particular parcel delivery order and also provider a platform for the administrator to edit the delivery status of an order and to set the current location of the parcel
 
-# Installation and settup
+# setup
 ## Clone the repository ##
 ```
 $ git clone (https://github.com/AineKiraboMbabazi/sendIT-.git
