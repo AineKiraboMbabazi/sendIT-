@@ -23,6 +23,9 @@ button{
     outline: 0;
     text-transform: uppercase;
 } 
+button hover{
+    cursor:pointer;
+}
 .home-page-body{
     background-image: url('../images/parcel.png');
     background-repeat: no-repeat;
@@ -61,7 +64,7 @@ button{
     margin-left: 10%;
 }
 .profile :hover{
-    /* color: #c6c6c6; */
+    cursor:pointer;
     font-size: 30px;
 }
 .create_order{
@@ -86,6 +89,7 @@ button{
 
 .create_order :hover{
     font-size: 28px;
+    cursor:pointer;
 }
 
 /* header css */
@@ -289,11 +293,10 @@ input{
     padding-top: 10px;
 }
 .add-user img{
-    /* margin-left:5%;
-    margin-right:5%; */
+    
     position: absolute;
     height: 25px;
-    /* margin-left: 5%; */
+   
     
 }
 
@@ -308,6 +311,7 @@ input{
 .add-user a :hover{
     text-decoration: none;
     border:solid 2px #040404;
+    
    
 }
 /* Card styles */
@@ -347,7 +351,7 @@ input{
 }
 .dashboard button{
     background-color: rgba(0, 0, 0, 0.8);
-   
+    cursor:pointer;
 }
 tbody select{
     background-color: rgba(0, 0, 0, 0.2);
