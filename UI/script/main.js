@@ -9,6 +9,11 @@ function confirm_request(){
         alert("Your Request has been saved");
     }
 }
+function display_details(){
+    window.location.href='viewDetails.html';
+    alert("Order details loading....");
+    
+}
 function confirm_edit(){
     if(document.getElementById('old destination').value==="" || document.getElementById('new destination').value===""){
         alert ('Some fields are not filled!')
