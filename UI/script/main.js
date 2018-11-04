@@ -16,9 +16,13 @@ function enter_location(elem){
     alert("location has been updated");
 }
 function confirm_request(){
+    if(document.getElementById('destination').value==="" || document.getElementById('pickuplocation').value===""){
+        alert ('Some fields are not filled!');
+    }else{
     if(window.confirm("This order might cost you some money, Are you sure you want to continue?")){
         alert("Your Request has been saved");
     }
+}
 }
 function display_details(){
     window.location.href='viewDetails.html';
@@ -26,8 +30,9 @@ function display_details(){
     
 }
 function confirm_edit(){
+
     if(document.getElementById('old destination').value==="" || document.getElementById('new destination').value===""){
-        alert ('Some fields are not filled!')
+        alert ('Some fields are not filled!');
     }
     else{
         if(window.confirm("Are you sure you want to continue?")){
@@ -71,7 +76,7 @@ function redirect_user(myform){
 }
 
 function confirm_password(){
-    if(document.getElementById('confirmpassword').value !==document.getElementById('password').value!=="" ){
+    if(document.getElementById('confirmpassword').value !==document.getElementById('password').value ){
         alert('Password mismatch');
     }
 }
