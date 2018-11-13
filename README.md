@@ -31,7 +31,7 @@ To run this project,
 - Click the GetStarted link to login 
 - Use the register button to sign up
 - Once you are logged in, use the navigation bar to navigate through the different pages of the system.
-# Running the project on github pages#
+# Running the project on github pages #
 click on the link below 
 ```
 [ Github pages link](https://ainekirabombabazi.github.io/sendIT-/UI )
