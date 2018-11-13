@@ -7,8 +7,27 @@ header {
     margin-bottom: 0;
     opacity: 0.8;
 }
+nav{
+    margin-left: 40%;
+    
+    margin-top: -5%;
+}
+nav li{
+    display: inline;
+    position: relative;
+    
+    
+}
 
-
+nav a{
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin-right: 5%;
+}
+nav a :hover{
+    border:2px #c6c6c6;
+}
 button{
     display: block;
     margin-left:5%;
@@ -23,7 +42,7 @@ button{
     outline: 0;
     text-transform: uppercase;
 } 
-button hover{
+button :hover{
     cursor:pointer;
 }
 .home-page-body{
@@ -135,23 +154,30 @@ button hover{
     height: 75px; 
    
 }
+.login_status #user span {
+    visibility: hidden;
+}
+.login_status #user span :hover{
+    visibility: visible;
+}
 
 #registration_form{
     height: 58vh;
 }
 .login-container{
     border: solid 2px black;
-    padding-top: 0vh;
-    padding-bottom: 0vh;
+    /* padding-top: 0vh;
+    padding-bottom: 0vh; */
+    margin-left: 3px;
     width: 35%;
     height: 55vh;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     margin-top: 20vh;
     margin-bottom: 13vh;
-    background-image: url('../images/delivery.png');
+    background-image: url('../images/tabimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -163,9 +189,10 @@ button hover{
     border: solid 2px black;
     overflow-x: scroll;
     overflow-y: auto;
-    padding-top: 0vh;
-    padding-bottom: 0vh;
+    /* padding-top: 0vh;
+    padding-bottom: 0vh; */
     width: 70%;
+    padding:3px;
     height: 80vh;
     position: relative;
     margin-left: auto;
@@ -174,14 +201,14 @@ button hover{
     margin-top: 5vh;
     margin-bottom: 13vh;
     line-height: 2;
-    background-image: url('../images/delivery.png');
+    background-image: url('../images/tabimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
 }
 
 table{
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;  
 }
 
@@ -194,15 +221,24 @@ tr:nth-child(even){
 
 tr:hover {
     background-color: #ddd;
+    
+}
+td {
+    padding-left: 15px;
 }
 tfoot td{
-    text-align: right;
+    margin-left: 95%;
+    
+}
+td img{
+    margin: 10px;
 }
 tfoot td span{
-    margin-right: 5%;
+    margin-right: 10px;
     background-color: #aaa;
     font-size: 20px;
     height: 37px;
+    border:solid 2px #040404;
 }
 tfoot td .create_order {
     width: 30%;
@@ -220,13 +256,13 @@ tfoot td .create_order :hover {
 }
 tfoot td span:hover {
     background-color: #aaa;
-    border:solid 2px #040404;
+  
 }
 .details{
     border: solid 2px black;
     padding-top: 0vh;
     padding-bottom: 0vh;
-    width: 50%;
+    width: 60%;
     height: 70vh;
     position: relative;
     margin-left: auto;
@@ -234,7 +270,7 @@ tfoot td span:hover {
     opacity: 0.8;
     margin-top: 10vh;
     margin-bottom: 13vh;
-    background-image: url('../images/delivery.png');
+    background-image: url('../images/tabimg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -280,7 +316,8 @@ input{
     color: whitesmoke;
     padding: 15px;
     text-transform: uppercase;
-   
+    position: relative;
+    scroll-behavior: unset;
    
     
 }
@@ -305,8 +342,10 @@ input{
     color: #040404;
     margin-left:8%;
 }
-.register{
-    height: 6%;
+#edit {
+    margin-top: 15%;
+    height: 55%;
+    margin-bottom: 20%;
 }
 .add-user a :hover{
     text-decoration: none;
@@ -329,6 +368,7 @@ input{
     width: 40px;
     margin-left: 100px;
     height: 40px;
+    position: relative;
     
 }
 
@@ -359,9 +399,41 @@ tbody select{
     height: 40px;
 }
 
+
 @media only screen and (max-width: 413px) {
+    header{
+        height: 20%;
+    }
     .login_status{
         opacity: 0;
+    }
+    .intransit-card{
+      margin-left:60% ; 
+      margin-top: -30%; 
+    }
+    nav{
+        margin-left: 0%;
+        
+        margin-top: 0%;
+    }
+    nav li{
+        display: block;
+        position: relative;
+        
+     
+    }
+    .card img , .intransit-card img{
+    width: 40px;
+    margin-left: 0px;
+    height: 40px;
+    position: relative;
+    
+}
+    nav a{
+        text-decoration: none;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-right: 1%;
     }
     .logo_item{
         width: 70vw;
@@ -428,10 +500,36 @@ tbody select{
         margin-bottom: 13vh;
        
     }
+    .intransit-card{
+        margin-left:60% ; 
+        margin-top: -30%; 
+      }
+    .card img , .intransit-card img{
+        width: 40px;
+        margin-left: 0px;
+        height: 40px;
+        position: relative;
+    }
+    nav{
+        margin-left: 20%;
+        
+        margin-top: -8%;
+    }
+    nav li{
+        display: inline;
+        position: relative;
+        
+        
+    }
+    nav a{
+        text-decoration: none;
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-right: 2%;
+    }
     
     .login_status{
-        margin-left: 75%;
-        margin-right: 10%;
+        opacity: 0;
     }
     .logo_item{
         

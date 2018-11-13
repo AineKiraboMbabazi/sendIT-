@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
+    <script src="./script/main.js"></script>
+</head>
+
+<body class="home-page-body">
+    <header>
+        <div class="header_logo">
+            
+            <a href="index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+        </div>
+        <div class="login_status">
+            <img class="icon" src="images/admin2.png" /><br/><span id="user">Admin</span>
+            
+        </div>
+    </header>
+    <section>
+        <article>
+            <div class="create_order" onclick="open_orders()"><img src="./images/add.png"/><span>Order</span></div>
+            <div class="profile" onclick="open_profile()"><img src="./images/profile.png" alt="profile picture"><span >
+                Profile</span></div>
+            
+                <div class="table-container" >
+               
+                        <div class="form_container">
+                            <div class="form-header">
+                                Delivery order history 
+                            </div>
+                            <table>
+                                <thead>
+                                    <td>OrderID</td>
+                                    <td>Date</td>
+                                    <td>Pickup</td>
+                                    <td>Destination</td>
+                                    <td>Status</td>
+                                    <td>Price</td>
+                                    <td>Current location</td>
+                                </thead>
+                                <tbody class="dashboard">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1/11/2018</td>
+                                        <td>Entebbe</td>
+                                        <td>Jinja</td>
+                                        <td>
+                                            <select>
+                                                <option>
+                                                    Delivered
+                                                </option>
+                                                <option>
+                                                    Intransit
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td>30,000</td>
+                                        <td>
+                                            <button id="1"  onclick="enter_location(this)">
+                                                Set
+                                            </button>
+                                            
+                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td>2</td>
+                                            <td>2/11/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="2"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>14/9/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                    <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="10"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>1/9/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="3"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>30/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="4"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>15/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="5"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                            
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>14/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="6"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>11/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                        <td>
+                                                <button id="7"  onclick="enter_location(this)">
+                                                        Set
+                                                    </button>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>1/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="8"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>31/7/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>
+                                                <select>
+                                                    <option>
+                                                        Delivered
+                                                    </option>
+                                                    <option>
+                                                        Intransit
+                                                    </option>
+                                                </select>
+                                            </td>
+                                            <td>30,000</td>
+                                            <td>
+                                                    <button id="9"  onclick="enter_location(this)">
+                                                            Set
+                                                        </button>
+                      
+                                            </td>
+                                        </tr>
+                                </tbody>
+                                <tfoot>
+                                        
+                                        <td colspan="6"> <span>Next<span></td>
+                                    
+                                </tfoot>
+                            </table>
+                        </div>
+                        
+                    </div>
+        
+        </article>
+    </section>
+</body>
+
+</html>
