@@ -6,28 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SendIT CreateOrders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
-    <script src="./script/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
+    <script src="../script/main.js"></script>
 </head>
 
 <body class="home-page-body">
     <header>
         <div class="header_logo">
             
-            <a href="index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-            <img class="icon" src="images/admin2.png" /><br/>User
-            
-        </div>
+                <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
+                
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                
+                        <a href="createOrder.html">create Order</a>
+                    </li>
+                    <li>
+                        
+                        <a href="orders.html">View Orders</a>
+                    </li>
+                    <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
     </header>
     <section>
         <article>
-            <div class="create_order" onclick="open_orders()"><img src="./images/add.png"/><span>Order</span></div>
-            <div class="profile"onclick="open_profile()" ><img src="./images/profile.png" alt="profile picture"><span >
-                Profile</span></div>
             
-            <div class="login-container" >
+            
+            <div class="login-container" id="edit" >
                
                 <div class="form_container">
                     <div class="form-header">
@@ -46,10 +62,7 @@
 
                         </div>
                         <div><button type="submit" onclick="confirm_request()">Request Delivery</button></div>
-                        <div class="add-user">
-                            <p><img src="./images/list.png"/><a href="orders.html"><span class="register">Orders</span>
-                            </a></p>
-                        </div>
+                        
                     </form>
                 </div>
 
