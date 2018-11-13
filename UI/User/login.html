@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SendIT Registration</title>
+    <title>SendIT Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
-    <script src="./script/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
+   
 </head>
 
 <body class="home-page-body">
@@ -16,24 +16,22 @@
             
             <a href="index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
-        <div class="login_status">
-            <img class="icon" src="images/admin2.png" /><br/>User
-            
-        </div>
+        
     </header>
     <section>
         <article>
-            <div class="login-container" id="registration_form">
+            <div class="login-container">
                
                 <div class="form_container">
-                    <div class="form-header">
-                        Sign Up
+                    <div class="form-header" >
+                        Sign In
                     </div>
-                    <form method="POST">
+                    <form id="form" method="POST" >
 
                         <div class="input_group">
                            
                             <input type="email" name="email" id="email" placeholder="myemail@gmail.com" required>
+
                         </div>
 
                         <div class="input_group">
@@ -41,14 +39,9 @@
                             <input type="password" name="password" id="password" placeholder="password" required>
 
                         </div>
-                        <div class="input_group">
-                            
-                            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirm password" required>
-
-                        </div>
-                        <div><button type="submit" onclick="confirm_password() ">Sign UP</button></div>
-                        <div class="add-user">
-                            <p><img src="./images/login1.png"/><a href="login.html"><span class="register">Login</span>
+                        <div><button id="submit"  onclick="redirect_user(); "  >Sign In</button></div>
+                        <div class="add-user" >
+                            <p><img src="../images/add.png"/><a href="registration.html"><span class="register">Register</span>
                             </a></p>
                         </div>
                     </form>
@@ -58,6 +51,7 @@
 
         </article>
     </section>
+    <script src="../script/main.js"></script>
 </body>
 
 </html>

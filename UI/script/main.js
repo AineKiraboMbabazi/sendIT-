@@ -1,8 +1,8 @@
 function open_orders(){
     window.location.href='createOrder.html';
 }
-function redirect_edit(){
-    window.location.href='edit.html';
+function redirect_login(){
+    window.location.href='login.html';
 }
 function enter_location(elem){
     myid=elem.id;
@@ -24,11 +24,8 @@ function confirm_request(){
     }
 }
 }
-function display_details(){
-    window.location.href='viewDetails.html';
-    alert("Order details loading....");
-    
-}
+
+
 function confirm_edit(){
 
     if(document.getElementById('old destination').value==="" || document.getElementById('new destination').value===""){
@@ -56,22 +53,23 @@ function add_record(){
 function open_profile(){
     window.location.href='profile.html';
 }
-function check_empty(){
-    if(document.getElementById('email').value ==="" || document.getElementById('password').value===""){
-        alert("All fields have to be filled!");
-        
-    }
+// function check_empty(){
     
-}
+    
+// }
 
-function redirect_user(myform){
-    if(myform.email.value ==="admin@admin.com" ){
+function redirect_user(){
+    if(document.getElementById('email').value ==="admin@admin.com" ){
         alert('logging in as admin...')
-        return window.location.href='adminDashboard.html';
+        window.location.href='orders.html';
     }
+    // else if(document.getElementById('email').value ==="" || document.getElementById('password').value===""){
+    //     alert("All fields have to be filled!");
+        
+    // }
     else{
         alert('logging in as user...')
-        return window.location.href='orders.html';
+        window.location.href='orders.html';
     }
 }
 

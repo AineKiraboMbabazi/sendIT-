@@ -6,32 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SendIT Orders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
-    <script src="./script/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
+    <script src="../script/main.js"></script>
 </head>
 
 <body class="home-page-body">
     <header>
         <div class="header_logo">
             
-            <a href="index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-            <img class="icon" src="images/admin2.png" /><br/><span id="user">User</span>
+            <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
             
         </div>
+        <nav>
+            <ul>
+                <li>
+            
+                    <a href="createOrder.html">create Order</a>
+                </li>
+                <li>
+                    
+                    <a href="orders.html">View Orders</a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="../index.html">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
     </header>
     <section>
         <article>
-            <div class="create_order" onclick="open_orders()"><img src="./images/add.png"/><span>Order</span></div>
-            <div class="profile" onclick="open_profile()"><img src="./images/profile.png" alt="profile picture"><span >
-                Profile</span></div>
+            
+           
             
                 <div class="table-container" >
                
                         <div class="form_container">
                             <div class="form-header">
-                                Delivery order history 
+                                Orders
                             </div>
                             <table>
                                 <thead>
@@ -52,9 +70,9 @@
                                         <td>Intransit</td>
                                         <td>30,000</td>
                                         <td>
-                                            <img src="./images/eye.png" class="view" onclick="display_details()">
-                                            <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                            <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                            <img src="../images/eye.png" class="view" onclick="display_details()">
+                                            <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                            <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                         </td>
                                     </tr>
                                     <tr>
@@ -65,9 +83,9 @@
                                             <td>Intransit</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -78,9 +96,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -91,9 +109,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -104,9 +122,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -117,9 +135,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -130,9 +148,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -143,9 +161,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                         <td>
-                                            <img src="./images/eye.png" class="view" onclick="display_details()">
-                                            <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                            <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                            <img src="../images/eye.png" class="view" onclick="display_details()">
+                                            <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                            <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                         </td>
                                         </tr>
                                         <tr>
@@ -156,9 +174,9 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img src="./images/trash.png" class="delete" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
                                             </td>
                                         </tr>
                                         <tr>
@@ -169,18 +187,14 @@
                                             <td>Delivered</td>
                                             <td>30,000</td>
                                             <td>
-                                                <img src="./images/eye.png" class="view" onclick="display_details()">
-                                                <img src="./images/edit.png" class="edit" onclick="redirect_edit()">
-                                                <img class="delete" img src="./images/trash.png" onclick="confirm_delete()">
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img class="delete" img src="../images/trash.png" onclick="confirm_delete()">
                       
                                             </td>
                                         </tr>
                                 </tbody>
-                                <tfoot>
-                                        
-                                        <td colspan="6"> <span>Next<span></td>
-                                    
-                                </tfoot>
+                                
                             </table>
                         </div>
                         
