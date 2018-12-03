@@ -58,29 +58,7 @@ function open_profile(){
     
 // }
 
-function redirect_user(){
-    if(document.getElementById('email').value ==="admin@admin.com" ){
-        alert('logging in as admin...')
-        window.location.href='orders.html';
-    }
-    else if(document.getElementById('email').value ==="" || document.getElementById('password').value===""){
-        alert("All fields have to be filled!");
-        
-    }
-    else{
-        alert('logging in as user...')
-        window.location.href='orders.html';
-    }
-}
 
-function confirm_password(){
-    if(document.getElementById('confirmpassword').value !==document.getElementById('password').value ){
-        alert('Password mismatch');
-    }
-    else if(document.getElementById('email').value ==="" || document.getElementById('password').value===""  || document.getElementById('confirmpassword').value){
-        alert("All fields have to be filled!");
-        
-    }
-}
+
 
 
