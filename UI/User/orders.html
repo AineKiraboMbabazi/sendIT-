@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT Orders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
+    <script src="../script/main.js"></script>
+</head>
+
+<body class="home-page-body">
+    <header>
+        <div class="header_logo">
+            
+            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+        </div>
+        <div class="login_status">
+            <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
+            
+        </div>
+        <nav>
+            <ul>
+                <li>
+            
+                    <a href="createOrder.html">create Order</a>
+                </li>
+                <li>
+                    
+                    <a href="orders.html">View Orders</a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="../index.html">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <section>
+        <article>
+            
+           
+            
+                <div class="table-container" >
+               
+                        <div class="form_container">
+                            <div class="form-header">
+                                Orders
+                            </div>
+                            <table>
+                                <thead>
+                                    <td>OrderID</td>
+                                    <td>Date</td>
+                                    <td>Pickup</td>
+                                    <td>Destination</td>
+                                    <td>Status</td>
+                                    <td>Price</td>
+                                    <td>Action</td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1/11/2018</td>
+                                        <td>Entebbe</td>
+                                        <td>Jinja</td>
+                                        <td>Intransit</td>
+                                        <td>30,000</td>
+                                        <td>
+                                            <img src="../images/eye.png" class="view" onclick="display_details()">
+                                            <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                            <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td>2</td>
+                                            <td>2/11/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Intransit</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>14/9/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>1/9/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>30/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>15/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>14/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>11/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                        <td>
+                                            <img src="../images/eye.png" class="view" onclick="display_details()">
+                                            <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                            <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>1/8/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>31/7/2018</td>
+                                            <td>Entebbe</td>
+                                            <td>Jinja</td>
+                                            <td>Delivered</td>
+                                            <td>30,000</td>
+                                            <td>
+                                                <img src="../images/eye.png" class="view" onclick="display_details()">
+                                                <img src="../images/edit.png" class="edit" onclick="redirect_edit()">
+                                                <img class="delete" img src="../images/trash.png" onclick="confirm_delete()">
+                      
+                                            </td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        
+                    </div>
+        
+        </article>
+    </section>
+</body>
+
+</html>

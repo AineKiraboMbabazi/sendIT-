@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT CreateOrders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
+    <script src="../script/main.js"></script>
+</head>
+
+<body class="home-page-body">
+    <header>
+        <div class="header_logo">
+            
+            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+        </div>
+        <div class="login_status">
+                <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
+                
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                
+                        <a href="createOrder.html">create Order</a>
+                    </li>
+                    <li>
+                        
+                        <a href="orders.html">View Orders</a>
+                    </li>
+                    <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <section>
+        <article>
+            
+            
+            <div class="login-container" id="edit" >
+               
+                <div class="form_container">
+                    <div class="form-header">
+                        Create delivery order
+                    </div>
+                    <form>
+
+                        <div class="input_group">
+                           
+                            <input type="text" name="pickuplocation" id="pickuplocation" placeholder="pickup location" required>
+                        </div>
+
+                        <div class="input_group">
+                            
+                            <input type="text" name="destination" id="destination" placeholder="destination" required>
+
+                        </div>
+                        <div><button type="submit" onclick="confirm_request()">Request Delivery</button></div>
+                        
+                    </form>
+                </div>
+
+            </div>
+
+        </article>
+    </section>
+</body>
+
+</html>
