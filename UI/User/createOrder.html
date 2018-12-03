@@ -7,7 +7,7 @@
     <title>SendIT CreateOrders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
-    <script src="../script/main.js"></script>
+    <script src="../script/create-parcel.js"></script>
 </head>
 
 <body class="home-page-body">
@@ -61,7 +61,12 @@
                             <input type="text" name="destination" id="destination" placeholder="destination" required>
 
                         </div>
-                        <div><button type="submit" onclick="confirm_request()">Request Delivery</button></div>
+                        <div class="input_group">
+                            
+                            <input type="text" name="description" id="description" placeholder="description" required>
+
+                        </div>
+                        <div><button type="submit" onclick="createParcel(event)">Request Delivery</button></div>
                         
                     </form>
                 </div>
