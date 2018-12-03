@@ -41,8 +41,8 @@ function register(){
 .catch(error=>alert("Failed to create account, try again later")); 
 }
 
-function login(){
-    
+function login(event){
+    event.preventDefault();
     if(document.getElementById('email').value === "" || document.getElementById('password').value===""){
         alert("All fields have to be filled!");
         
@@ -65,6 +65,7 @@ function login(){
     var response_data = response;
     if (response_data.message === 'login successful'){
         alert("Welcome to sendIT");
+        console.log(response_data.auth_token);
         localStorage.setItem("auth_token",response_data.auth_token);
         
         if(document.getElementById('email').value ==="admin@admin.com" ){
@@ -79,17 +80,13 @@ function login(){
         
     }
     else if(response_data.message === "You are not a system user"){
-        alert("An account with your credentials doesnot exist")
-        window.location.href = '../User/registration.html';
+        if(window.confirm("An account with your credentials doesnot exist, Would you like to create an account?")){
+            window.location.href = '../User/registration.html';
+        }
 
     }
-    else if(response_data.message === "You entered an invalid password,\
-    password should be atleast 8 characters long"){
-        alert("You entered an invalid password, The password should be atleast 8 characters");
-        window.location.href = 'login.html';
-    }
-    else {
-        alert("You entered an invalid email");
+    else if(response_data.status_code === 401){
+        alert(response_data.message);
     }
     
 })
