@@ -59,6 +59,7 @@ function login(event){
         alert("Welcome to sendIT");
         console.log(response_data.auth_token);
         localStorage.setItem("auth_token",response_data.auth_token);
+        localStorage.setItem("user_Id",response_data.user_Id);
         
         if(document.getElementById('email').value ==="admin@admin.com" ){
             alert('logging in as admin...')

@@ -1,7 +1,10 @@
-token = localStorage.getItem("auth_token")
-function getParcels(){
-    
-    fetch('http://127.0.0.1:5000/api/v1/parcels',{
+token = localStorage.getItem("auth_token");
+userId = localStorage.getItem("user_Id");
+
+
+getUserParcels();
+function getUserParcels(){
+    fetch('http://127.0.0.1:5000/api/v1/users/'+userId+'/parcels',{
         method: 'GET',
         headers: {
             "Content_Type": 'application/json',
@@ -9,10 +12,11 @@ function getParcels(){
     }
 }).then((response) => response.json())
 .then((response) => {
+    console.log(response);
+    
     var response_data = response;
     if (response_data.status_code===200){
-        // console.log(response_data.parcels);
-        // alert(response_data.parcels);
+        console.log(response_data);
         response_data.parcels.forEach(parcel => {
             document.querySelector('tbody').innerHTML+=`
             

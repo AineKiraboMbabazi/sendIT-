@@ -2,6 +2,7 @@ token = localStorage.getItem("auth_token")
 
 function getId(elem){
     var edit = elem.parentNode.parentNode.cells[0].textContent;
+    alert (edit)
     window.location.href='edit.html';
     
 }
