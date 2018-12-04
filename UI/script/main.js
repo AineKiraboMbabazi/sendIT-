@@ -4,6 +4,12 @@ function open_orders(){
 function redirect_login(){
     window.location.href='login.html';
 }
+// function redirect_edit(){
+    
+// }
+function display_details(){
+    window.location.href='viewDetails.html';
+}
 function enter_location(elem){
     myid=elem.id;
     
