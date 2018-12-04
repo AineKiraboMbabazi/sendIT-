@@ -33,6 +33,9 @@ function getParcels(){
             
         });
     }
+    else if(response_data.status_code === 400 ){
+        alert(response_data.message);
+    }
     
 })
 .catch(error=>alert("unable to retrieve your parcels, please try again later")); 

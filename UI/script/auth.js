@@ -6,7 +6,6 @@ function register(){
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     }
-    console.log(user_credentials['email']);
     fetch('http://127.0.0.1:5000/api/v1/auth/signup',{
         method: 'POST',
         body: JSON.stringify(user_credentials),
@@ -18,23 +17,16 @@ function register(){
 .then((response) => {
     var response_data = response;
     console.log(response_data)
-    if (response_data.message === "user created successfully"){
-        alert(" Your account has been successfully created");
+    if (response_data.status_code === 201){
+        alert(response_data.message);
         window.location.href='../User/login.html';
     }
-    else if(response_data.message === "Email already exists"){
-        alert("The email you have entered already exists, please use another email")
+    else if(response_data.status_code === 400){
+        alert(response_data.message)
         window.location.href = '../User/registration.html';
 
     }
-    else if(response_data.message === "You entered an invalid password or \
-    password is missing"){
-        alert("You entered an invalid password, The password should be atleast 8 characters");
-        window.location.href = '../User/registration.html';
-    }
-    else {
-        alert("You entered an invalid email");
-    }
+    
     
 }
     )
