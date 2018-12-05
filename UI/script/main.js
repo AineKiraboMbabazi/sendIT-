@@ -1,5 +1,36 @@
+
+if(localStorage.getItem('auth_token')===null){
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    if(page!=='registration.html'||page!=='index.html'|| page!=='login.html'){
+        document.location.href='login.html';
+    }
+
+ 
+}
+
+document.querySelector('#logout').addEventListener('click',()=>{
+localStorage.clear();
+document.location.href='login.html';
+});
+
+
+
+
+document.querySelector("#profile").addEventListener('click',()=>{
+    open_profile()
+    })
+    document.querySelector("#createOrder").addEventListener('click',()=>{
+        open_orders()
+        })
+
+document.querySelector('#orders').addEventListener('click',function(){
+    document.location.href='orders.html';  
+});
+
+
 function open_orders(){
-    window.location.href='createOrder.html';
+ return   document.location.href='createOrder.html';
 }
 function redirect_login(){
     window.location.href='login.html';
@@ -10,6 +41,7 @@ function redirect_login(){
 function display_details(){
     window.location.href='viewDetails.html';
 }
+
 function enter_location(elem){
     myid=elem.id;
     
@@ -57,8 +89,10 @@ function add_record(){
         alert("Your record has been added!");
 }
 function open_profile(){
-    window.location.href='profile.html';
+   return document.location.href='profile.html';
 }
+
+
 // function check_empty(){
     
     

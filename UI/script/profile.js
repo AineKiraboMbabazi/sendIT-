@@ -1,7 +1,11 @@
-token = localStorage.getItem("auth_token")
-function getParcels(){
-    
-    fetch('http://127.0.0.1:5000/api/v1/parcels',{
+token = localStorage.getItem("auth_token");
+userId = localStorage.getItem("user_Id");
+
+// (function (){
+//     profile();
+// })();
+(function profile(){
+    fetch('http://127.0.0.1:5000/api/v1/users/'+userId+'/parcels',{
         method: 'GET',
         headers: {
             "Content_Type": 'application/json',
@@ -10,11 +14,20 @@ function getParcels(){
 }).then((response) => response.json())
 .then((response) => {
     var response_data = response;
-    if (response_data.status_code === 200){
-        // console.log(response_data.parcels);
-        // alert(response_data.parcels);
+    console.log(response_data);
+    if (response_data.status_code===200){
         response_data.parcels.forEach(parcel => {
+            delivered = 0;
+            intransit =0;
+            if (parcel.status === 'Delivered'){
+                delivered++;
+            }
+            if (parcel.status === 'intransit'){
+                intransit++;
+            }
+
             document.querySelector('tbody').innerHTML+=`
+            
             <tr>
             <td>${parcel.parcelid}</td>
             <td>${parcel.userid}</td>
@@ -29,12 +42,20 @@ function getParcels(){
             
             `
         });
+        console.log(delivered);
+        console.log(intransit);
     }
     else if(response_data.status_code === 404 || response_data.status_code === 400){
-        alert(response_data.message);
-
+        document.querySelector('tbody').innerHTML+=`
+            
+            <tr>
+            <td colspan="5">${response_data.message}</td>
+            </tr>
+            
+            `
     }
 
+    
 })
 .catch(error=>alert("unable to retrieve your parcels, please try again later")); 
-}
+})();
