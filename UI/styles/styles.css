@@ -188,13 +188,13 @@ button :hover{
 
 .table-container {
     border: solid 2px black;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     overflow-y: auto;
     /* padding-top: 0vh;
     padding-bottom: 0vh; */
     width: 70%;
     padding:3px;
-    height: 80vh;
+    /* height: 80vh; */
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -210,7 +210,7 @@ button :hover{
 
 table{
     width: 100%;
-    border-collapse: collapse;  
+    /* border-collapse: collapse;   */
 }
 
 thead{
@@ -430,10 +430,23 @@ tbody select{
     position: relative;
     
 }
+.form-container{
+    border: solid 2px black;
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    width: 50%;
+    height: 55vh;
+    position: relative;
+    
+    margin-top: 60vh;
+    margin-bottom: 13vh;
+   
+}
 nav button{
     color: whitesmoke;
     text-transform: uppercase;
     margin-right: 1%;
+    float: none;
 }
 
     .logo_item{
@@ -501,6 +514,18 @@ nav button{
         margin-bottom: 13vh;
        
     }
+    .form-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 50%;
+        height: 55vh;
+        position: relative;
+        
+        margin-top: 20vh;
+        margin-bottom: 13vh;
+       
+    }
     .intransit-card{
         margin-left:60% ; 
         margin-top: -30%; 
@@ -511,6 +536,7 @@ nav button{
         height: 40px;
         position: relative;
     }
+    
     nav{
         margin-left: 20%;
         

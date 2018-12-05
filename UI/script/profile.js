@@ -1,9 +1,10 @@
 token = localStorage.getItem("auth_token");
 userId = localStorage.getItem("user_Id");
 
-
-getUserParcels();
-function getUserParcels(){
+// (function (){
+//     profile();
+// })();
+(function profile(){
     fetch('http://127.0.0.1:5000/api/v1/users/'+userId+'/parcels',{
         method: 'GET',
         headers: {
@@ -12,12 +13,19 @@ function getUserParcels(){
     }
 }).then((response) => response.json())
 .then((response) => {
-    console.log(response);
-    
     var response_data = response;
+    console.log(response_data);
     if (response_data.status_code===200){
-        console.log(response_data);
         response_data.parcels.forEach(parcel => {
+            delivered = 0;
+            intransit =0;
+            if (parcel.status === 'Delivered'){
+                delivered++;
+            }
+            if (parcel.status === 'intransit'){
+                intransit++;
+            }
+
             document.querySelector('tbody').innerHTML+=`
             
             <tr>
@@ -34,16 +42,20 @@ function getUserParcels(){
             
             `
         });
+        console.log(delivered);
+        console.log(intransit);
     }
-    else if(response_data.status_code === 404 ){
-        alert(response_data.message);
+    else if(response_data.status_code === 404 || response_data.status_code === 400){
+        document.querySelector('tbody').innerHTML+=`
+            
+            <tr>
+            <td colspan="5">${response_data.message}</td>
+            </tr>
+            
+            `
+    }
 
-    }
-    else if(response_data.status_code === 400 ){
-        alert(response_data.message);
-
-    }
     
 })
 .catch(error=>alert("unable to retrieve your parcels, please try again later")); 
-}
+})();

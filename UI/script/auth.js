@@ -1,4 +1,5 @@
-function register(){
+function register(x){
+    x.preventDefault()
     if(document.getElementById('confirmpassword').value !==document.getElementById('password').value ){
         alert('Password mismatch');
     }
@@ -22,7 +23,7 @@ function register(){
         window.location.href='../User/login.html';
     }
     else if(response_data.status_code === 400){
-        alert(response_data.message)
+        alert(response_data.message);
         window.location.href = '../User/registration.html';
 
     }

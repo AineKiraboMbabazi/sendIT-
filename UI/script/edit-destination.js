@@ -1,16 +1,9 @@
 token = localStorage.getItem("auth_token")
+parcelId = localStorage.getItem("editId")
 
-function getId(elem){
-    var edit = elem.parentNode.parentNode.cells[0].textContent;
-    alert (edit)
-    window.location.href='edit.html';
-    
-}
+
 function editDestination(el){
     el.preventDefault()
-    orderId=getId();
-    console.log(orderId);
-    
     new_destination = document.getElementById("newdestination").value;
     old_destination = document.getElementById("olddestination").value;
     if (new_destination === old_destination){
@@ -21,8 +14,9 @@ function editDestination(el){
     var destination = {
         destination: new_destination
     }
+    
 
-    fetch('/api/v1/parcels/destination/'+edit,{
+    fetch('http://127.0.0.1:5000/api/v1/parcels/destination/'+parcelId,{
         method: 'PUT',
         body: JSON.stringify(destination),
         headers: {
@@ -40,7 +34,7 @@ function editDestination(el){
     console.log(response_data.status_code)
     if (response_data.status_code === 201){
         alert(response_data.message);
-        alert(response_data.updated_parcel);
+        console.log(response_data.updated_parcel);
     }
     
 }
