@@ -1,16 +1,10 @@
 token = localStorage.getItem("auth_token")
+parcelId = localStorage.getItem("detailsId")
 
-function getId(elem){
-    var edit = elem.parentNode.parentNode.cells[0].textContent;
-    return edit;
-}
 
+viewDetails();
 function viewDetails(){
-    orderId=getId();
-    alert('i got here');
-    console.log(orderId);
-
-    fetch('/api/v1/parcels/'+orderId,{
+    fetch('http://127.0.0.1:5000/api/v1/parcels/'+parcelId,{
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -19,18 +13,55 @@ function viewDetails(){
     }
 }).then((response_data) => response_data.json())
 .then((response_data) => {
-    console.log(response_data);
-    alert(response_data.message);
-    // if (response_data.status_code === 400){
-    //    alert(response_data.message);
+    if (response_data.status_code === 200){
+            document.querySelector('tbody').innerHTML+=`   
+            <tr>
+            <td><span class="row-title">OrderId</span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.parcelid}</span></td>
+            </tr>
+
+            <tr>
+            <td><span class="row-title">Date</span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.creation_date}</span></td>
+            </tr>
+
+            <tr>
+            <td><span class="row-title">Pickup Location</span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.pickup}</span></td>
+            </tr>
+
+            <tr>
+            <td><span class="row-title"> Destination</span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.destination}</span></td>
+            </tr>
         
-    // }
-    // console.log(response_data.status_code)
-    // if (response_data.status_code === 201){
-    //     alert(response_data.message);
-    //     alert(response_data.updated_parcel);
-    // }
-    
+            <tr>
+            <td><span class="row-title"> Present location </span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.present_location}</span></td>
+            </tr>
+
+            <tr>
+            <td><span class="row-title"> Status </span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.status}</span></td>
+            </tr>
+
+            <tr>
+            <td><span class="row-title"> Description</span></td>
+            <td><span id="separator">:</span></td>
+            <td><span>${response_data.parcel.description}</span></td>
+            </tr>
+
+                `
+        
+                                
+                                
+    }
 }
     )
 .catch(error=>alert("Failed to get parcel Delivery order details, try again later")); 
