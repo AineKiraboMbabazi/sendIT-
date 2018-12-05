@@ -49,3 +49,8 @@ function editDestination(id){
     return document.location.href=`edit.html`;
 
 }
+function viewDetails(id){
+    localStorage.setItem('detailsId', id);
+    return document.location.href=`viewDetails.html`;
+
+}
