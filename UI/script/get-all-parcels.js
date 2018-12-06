@@ -28,7 +28,7 @@ function getParcels(){
             <td>${parcel.present_location}</td>
             <td>
                 <img src="../images/eye.png" class="view" onclick="viewDetails(${parcel.parcelid})">
-                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                <img src="../images/trash.png" class="delete" onclick="confirm_delete(${parcel.parcelid})">
             </td>
             <td>
                 <button id="1" onclick="enter_location(${parcel.parcelid}); ">
@@ -57,3 +57,34 @@ function enter_location(id){
     localStorage.setItem('editId', id);
     return document.location.href=`editPresentLocation.html`;
 }
+
+function confirm_delete(id){
+    
+    if(window.confirm("This action will delete the order, Are you sure you want to continue?")){
+        fetch('http://127.0.0.1:5000/api/v1/parcels/'+id,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` 
+            
+    }
+    }).then((response_data) => response_data.json())
+    .then((response_data) => {
+        console.log(response_data);
+        if (response_data.status_code === 200){
+            alert(response_data.message);
+            console.log(response_data.message);
+            document.location.href='../Admin/adminDashboard.html';
+        }
+        
+        if (response_data.status_code === 400 ){
+            alert(response_data.message);
+            
+        }
+    
+        
+    }
+        )
+        
+    }
+    }

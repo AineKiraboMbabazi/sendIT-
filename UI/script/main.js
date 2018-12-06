@@ -53,16 +53,7 @@ function display_details(){
 
 function enter_location(elem){
     window.location.href='editPresentLocation.html';
-//     myid=elem.id;
-    
-//     var newlocation=prompt("Enter the present parcel location!");
-    
-//    if(newlocation!==null){
-       
-//        document.getElementById(myid).innerHTML =newlocation;
 
-//    }
-//     alert("location has been updated");
 }
 function confirm_request(){
     if(document.getElementById('destination').value==="" || document.getElementById('pickuplocation').value===""){
@@ -86,11 +77,11 @@ function confirm_edit(){
         }
 }
 }
-function confirm_delete(){
-    if(window.confirm("This action will delete the order, Are you sure you want to continue?")){
-        alert("Your Request has been deleted");
-    }
-}
+// function confirm_delete(){
+//     if(window.confirm("This action will delete the order, Are you sure you want to continue?")){
+//         alert("Your Request has been deleted");
+//     }
+// }
 function add_record(){
     if(document.getElementById('email').value==="" || document.getElementById('password').value===""){
         alert("Seems that some fields are not filled, please fill them and try again!");

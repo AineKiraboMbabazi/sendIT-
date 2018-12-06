@@ -97,7 +97,21 @@ button :hover{
     margin-top: 3%;
     width: 15%; 
 }
-
+.message{
+    text-align: center;
+    font-style: italic; 
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+.error{
+    text-align: center;
+    font-style: italic; 
+    margin-left: 5%;
+    margin-right: 5%;
+    color: red;
+    margin-top: 3%;
+}
 .create_order img{
     height: 25px;
     padding-right:10% ;
