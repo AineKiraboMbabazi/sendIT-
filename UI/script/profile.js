@@ -46,13 +46,9 @@ userId = localStorage.getItem("user_Id");
         console.log(intransit);
     }
     else if(response_data.status_code === 404 || response_data.status_code === 400){
-        document.querySelector('tbody').innerHTML+=`
-            
-            <tr>
-            <td colspan="5">${response_data.message}</td>
-            </tr>
-            
-            `
+        document.querySelector('table').innerHTML=`
+            ${response_data.message}
+            `  
     }
 
     

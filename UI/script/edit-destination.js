@@ -5,12 +5,7 @@ parcelId = localStorage.getItem("editId")
 function editDestination(el){
     el.preventDefault()
     new_destination = document.getElementById("newdestination").value;
-    old_destination = document.getElementById("olddestination").value;
-    if (new_destination === old_destination){
-        alert("The destination is already up to date");
-    }
-
-
+    
     var destination = {
         destination: new_destination
     }
@@ -27,15 +22,29 @@ function editDestination(el){
 }).then((response_data) => response_data.json())
 .then((response_data) => {
     console.log(response_data);
-    if (response_data.status_code === 400){
-       alert(response_data.message);
-        
+    if (response_data.status_code === 201 ){
+        // document.querySelector('.message').innerHTML=`
+        //     ${response_data.message}
+        //     `
+        localStorage.setItem("detailsId",parcelId);
+        document.location.href= '../User/viewDetails.html';
+      
     }
-    console.log(response_data.status_code)
-    if (response_data.status_code === 201){
-        alert(response_data.message);
-        console.log(response_data.updated_parcel);
+    
+    if (response_data.status_code === 404 || response_data.status_code === 400){
+        document.querySelector('.error').innerHTML=`
+            ${response_data.message}
+            `
+            setTimeout(() => {
+                document.querySelector('.error').innerHTML="";
+            }, 2000);
+          
     }
+
+    // if (){
+    //     alert(response_data.message);
+    //     console.log(response_data.updated_parcel);
+    // }
     
 }
     )

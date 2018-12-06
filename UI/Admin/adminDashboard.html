@@ -7,8 +7,7 @@
     <title>SendIT Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
-    <script src="../script/main.js"></script>
-    <script src="../script/get-all-parcels.js"></script>
+    
 </head>
 
 <body class="home-page-body">
@@ -52,30 +51,17 @@
                             <table>
                                 <thead>
                                     <td>OrderID</td>
+                                    <td>UserID</td>
                                     <td>Date</td>
                                     <td>Pickup</td>
                                     <td>Destination</td>
                                     <td>Status</td>
-                                    <td>Price</td>
-                                    <td>Current location</td>
+                                    <td>Description</td>
+                                    <td>Present location</td>
+                                    <td>Action</td>
+                                    <td>Update location</td>
                                 </thead>
                                 <tbody class="dashboard">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>1/11/2018</td>
-                                        <td>Entebbe</td>
-                                        <td>Jinja</td>
-                                        <td>Status</td>
-                                        <td>30,000</td>
-                                        <td>
-                                            <button id="1"  onclick="enter_location(this)">
-                                                Set
-                                            </button>
-                                            
-                            
-                                        </td>
-                                    </tr>
-                                    
                                 </tbody>
                                 
                             </table>
@@ -86,6 +72,8 @@
         </article>
     </section>
     <script src="../script/main.js"></script>
+    
+    <script src="../script/get-all-parcels.js"></script>
 </body>
 
 </html>

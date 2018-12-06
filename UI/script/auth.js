@@ -64,7 +64,9 @@ function login(event){
         
         if(document.getElementById('email').value ==="admin@admin.com" ){
             alert('logging in as admin...')
+       
             window.location.href='../Admin/adminDashboard.html';
+            localStorage.setItem("user_role",admin);
         }
         else{
             alert('logging in as user...')
