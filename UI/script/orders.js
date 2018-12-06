@@ -24,7 +24,7 @@ userId = localStorage.getItem("user_Id");
             <td>
                 <img src="../images/eye.png" class="view" onclick="viewDetails(${parcel.parcelid})">
                 <img src="../images/edit.png" class="edit" onclick="editDestination(${parcel.parcelid});">
-                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
+                <img src="../images/trash.png" class="delete" onclick="confirm_delete(${parcel.parcelid})">
             </td>
         </tr>
             
@@ -32,13 +32,10 @@ userId = localStorage.getItem("user_Id");
         });
     }
     else if(response_data.status_code === 404 || response_data.status_code === 400){
-        document.querySelector('tbody').innerHTML+=`
-            
-            <tr>
-            <td colspan="5">${response_data.message}</td>
-            </tr>
-            
+        document.querySelector('table').innerHTML+=`
+            response_data.message
             `
+            
     }
 
     
@@ -52,5 +49,8 @@ function editDestination(id){
 function viewDetails(id){
     localStorage.setItem('detailsId', id);
     return document.location.href=`viewDetails.html`;
-
+}
+function confirm_delete(id){
+    localStorage.setItem('cancelId', id);
+    return d
 }

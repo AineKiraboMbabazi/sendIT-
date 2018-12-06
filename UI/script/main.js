@@ -39,7 +39,16 @@ function redirect_login(){
     
 // }
 function display_details(){
-    window.location.href='viewDetails.html';
+    userrole = localStorage.getItem("user_role");
+    console.log
+    (userrole);
+    
+    // if (userrole === 'admin'){
+    //     'http://127.0.0.1:5500/UI/User/viewDetails.html';
+    //     window.location.href='../User/viewDetails.html';
+    // }else{
+        window.location.href='../User/viewDetails.html';
+    // }
 }
 
 function enter_location(elem){
@@ -50,6 +59,7 @@ function enter_location(elem){
    if(newlocation!==null){
        
        document.getElementById(myid).innerHTML =newlocation;
+
    }
     alert("location has been updated");
 }
