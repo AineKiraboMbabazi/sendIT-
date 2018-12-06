@@ -25,12 +25,12 @@ document.querySelector("#profile").addEventListener('click',()=>{
         })
 
 document.querySelector('#orders').addEventListener('click',function(){
-    document.location.href='orders.html';  
+    document.location.href='../User/orders.html';  
 });
 
 
 function open_orders(){
- return   document.location.href='createOrder.html';
+ return   document.location.href='../User/createOrder.html';
 }
 function redirect_login(){
     window.location.href='login.html';
@@ -52,16 +52,17 @@ function display_details(){
 }
 
 function enter_location(elem){
-    myid=elem.id;
+    window.location.href='editPresentLocation.html';
+//     myid=elem.id;
     
-    var newlocation=prompt("Enter the present parcel location!");
+//     var newlocation=prompt("Enter the present parcel location!");
     
-   if(newlocation!==null){
+//    if(newlocation!==null){
        
-       document.getElementById(myid).innerHTML =newlocation;
+//        document.getElementById(myid).innerHTML =newlocation;
 
-   }
-    alert("location has been updated");
+//    }
+//     alert("location has been updated");
 }
 function confirm_request(){
     if(document.getElementById('destination').value==="" || document.getElementById('pickuplocation').value===""){
@@ -99,7 +100,7 @@ function add_record(){
         alert("Your record has been added!");
 }
 function open_profile(){
-   return document.location.href='profile.html';
+   return document.location.href='../User/profile.html';
 }
 
 

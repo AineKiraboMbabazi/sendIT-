@@ -10,8 +10,9 @@ userId = localStorage.getItem("user_Id");
     }
 }).then((response) => response.json())
 .then((response) => {
-    var response_data = response;
+    response_data = response;
     console.log(response_data);
+    
     if (response_data.status_code === 200){
         response_data.parcels.forEach(parcel => {
             document.querySelector('tbody').innerHTML+=`
@@ -31,11 +32,11 @@ userId = localStorage.getItem("user_Id");
             `
         });
     }
-    else if(response_data.status_code === 404 || response_data.status_code === 400){
-        document.querySelector('table').innerHTML+=`
-            response_data.message
-            `
-            
+    else if (response_data.status_code === 404){
+      
+        document.querySelector('table').innerHTML=`
+            ${response_data.message}
+            `  
     }
 
     

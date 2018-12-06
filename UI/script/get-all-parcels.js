@@ -31,7 +31,7 @@ function getParcels(){
                 <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
             </td>
             <td>
-                <button id="1"  onclick="enter_location(this)">
+                <button id="1" onclick="enter_location(${parcel.parcelid}); ">
                     Set
                 </button>
             </td>
@@ -41,7 +41,7 @@ function getParcels(){
         });
     }
     else if(response_data.status_code === 404 || response_data.status_code === 400){
-        document.querySelector('table').innerHTML+=`
+        document.querySelector('table').innerHTML=`
         ${response_data.message}
         `
     }
@@ -52,4 +52,8 @@ function getParcels(){
 function viewDetails(id){
     localStorage.setItem('detailsId', id);
     return document.location.href=`../User/viewDetails.html`;
+}
+function enter_location(id){
+    localStorage.setItem('editId', id);
+    return document.location.href=`editPresentLocation.html`;
 }
