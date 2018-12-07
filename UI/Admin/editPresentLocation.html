@@ -29,6 +29,9 @@
                     <button id="profile">Profile</button>
                 </li>
                 <li>
+                        <button id="admin">Admin</button>
+                    </li>
+                <li>
                     <button id="orders">Orders</button>
                 </li>
                 <li>
@@ -48,13 +51,15 @@
                         Edit Present Location
                     </div>
                     <form>
-
+                        <div class="error">
+                            
+                        </div>
                         <div class="input_group">
                            
                             <input type="text" name=" Present Location" id="presentdestination" placeholder="Present Location" required>
                         </div>
 
-                        <div><button type="submit" onclick="setPresentDestination(event)"> Set</button></div>
+                        <div><button type="submit" id="submit"> Set</button></div>
                         
                     </form>
                 </div>

@@ -1,7 +1,17 @@
+document.querySelector('.error').style.display='none';
 function register(x){
     x.preventDefault()
     if(document.getElementById('confirmpassword').value !==document.getElementById('password').value ){
-        alert('Password mismatch');
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        'Password mismatch'
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 2000);
+        window.location.href = '../User/registration.html';
+
+        
     }
     var user_credentials = {
         email: document.getElementById("email").value,
@@ -19,11 +29,23 @@ function register(x){
     var response_data = response;
     console.log(response_data)
     if (response_data.status_code === 201){
-        alert(response_data.message);
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        ${response_data.message}
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 2000);
         window.location.href='../User/login.html';
     }
     else if(response_data.status_code === 400){
-        alert(response_data.message);
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        ${response_data.message}
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 2000);
         window.location.href = '../User/registration.html';
 
     }
@@ -36,11 +58,6 @@ function register(x){
 
 function login(event){
     event.preventDefault();
-    if(document.getElementById('email').value === "" || document.getElementById('password').value===""){
-        alert("All fields have to be filled!");
-        
-    }
-
     var user_credentials = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
@@ -56,33 +73,32 @@ function login(event){
 }).then((response) => response.json())
 .then((response) => {
     var response_data = response;
-    if (response_data.message === 'login successful'){
-        alert("Welcome to sendIT");
+    if (response_data.status_code === 201){
         console.log(response_data.auth_token);
         localStorage.setItem("auth_token",response_data.auth_token);
         localStorage.setItem("user_Id",response_data.user_Id);
         
         if(document.getElementById('email').value ==="admin@admin.com" ){
-            alert('logging in as admin...')
-       
+            
             window.location.href='../Admin/adminDashboard.html';
-            localStorage.setItem("user_role",admin);
+            localStorage.setItem("user_role","admin");
         }
         else{
-            alert('logging in as user...')
+
             window.location.href='../User/orders.html';
         }
         
         
     }
-    else if(response_data.message === "You are not a system user"){
-        if(window.confirm("An account with your credentials doesnot exist, Would you like to create an account?")){
-            window.location.href = '../User/registration.html';
-        }
-
-    }
+    
     else if(response_data.status_code === 401){
-        alert(response_data.message);
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        ${response_data.message}
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 2000);
     }
     
 })

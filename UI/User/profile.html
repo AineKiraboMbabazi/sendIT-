@@ -30,6 +30,9 @@
                     <button id="profile">Profile</button>
                 </li>
                 <li>
+                        <button id="admin">Admin</button>
+                    </li>
+                <li>
                     <button id="orders">Orders</button>
                 </li>
                 <li>
@@ -42,11 +45,11 @@
         <article>
             <div class="card">
                 <div class="delivered"><img src="../images/deliverd.png"></div>
-                <div class="card-container"><span>Delivered Orders</span><br><span>8</span></div>
+                <div class="card-container"><span>Delivered Orders</span><br><span id="delivered"></span></div>
             </div>
             <div class="intransit-card">
                     <div class="delivered"><img src="../images/intransit.png"></div>
-                    <div class="card-container"><span>Orders intransit</span><br><span>2</span></div>
+                    <div class="card-container"><span>Orders intransit</span><br><span id="intransit"></span></div>
                 </div>
             <div class="table-container" >
                
@@ -57,10 +60,9 @@
                     <table>
                         <thead>
                             <td>OrderID</td>
-                            <td>UserID</td>
                             <td>Date</td>
                             <td>Status</td>
-                            <td>Action</td>
+                            <td>Description</td>
                         </thead>
                         <tbody>
                         
@@ -76,7 +78,7 @@
     </section>
     <script src="../js/main.js"></script>
     <script src="../js/profile.js"></script>
-    <script src="../js/view-user-parcels.js"></script>
+    
     
 </body>
 

@@ -1,6 +1,14 @@
 token = localStorage.getItem("auth_token")
 parcelId = localStorage.getItem("detailsId")
-
+isadmin = localStorage.getItem("user_role");
+if(isadmin==='admin'){
+    document.getElementById("admin").addEventListener('click',()=>{
+        window.location.href='../Admin/adminDashboard.html';
+    });
+ 
+}else{
+    document.getElementById("admin").style.display='none';
+}
 
 viewDetails();
 function viewDetails(){
@@ -13,6 +21,17 @@ function viewDetails(){
     }
 }).then((response_data) => response_data.json())
 .then((response_data) => {
+
+    message = localStorage.getItem('redirectMessage');
+    if (message === null){
+        document.querySelector('.message').style.display='none';
+    }
+    document.querySelector('.message').innerHTML=`
+            ${message}
+            `
+            setTimeout(() => {
+                document.querySelector('.error').innerHTML="";
+            }, 2000);
     if (response_data.status_code === 200){
             document.querySelector('tbody').innerHTML+=`   
             <tr>

@@ -1,9 +1,17 @@
 token = localStorage.getItem("auth_token")
 parcelId = localStorage.getItem("editId")
+isadmin = localStorage.getItem("user_role");
+if(isadmin==='admin'){
+    document.getElementById("admin").addEventListener('click',()=>{
+        window.location.href='../Admin/adminDashboard.html';
+    });
+ 
+}else{
+    document.getElementById("admin").style.display='none';
+}
 
-
-function editDestination(el){
-    el.preventDefault()
+function editDestination(){
+    // el.preventDefault()
     new_destination = document.getElementById("newdestination").value;
     
     var destination = {
@@ -23,9 +31,6 @@ function editDestination(el){
 .then((response_data) => {
     console.log(response_data);
     if (response_data.status_code === 201 ){
-        // document.querySelector('.message').innerHTML=`
-        //     ${response_data.message}
-        //     `
         localStorage.setItem("detailsId",parcelId);
         document.location.href= '../User/viewDetails.html';
       
@@ -38,14 +43,9 @@ function editDestination(el){
             setTimeout(() => {
                 document.querySelector('.error').innerHTML="";
             }, 2000);
-          
+            document.location.href= '../User/orders.html';
     }
 
-    // if (){
-    //     alert(response_data.message);
-    //     console.log(response_data.updated_parcel);
-    // }
-    
 }
     )
 .catch(error=>alert("Failed to create parcel Delivery order, try again later")); 

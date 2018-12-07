@@ -1,6 +1,14 @@
 token = localStorage.getItem("auth_token");
 userId = localStorage.getItem("user_Id");
-
+isadmin = localStorage.getItem("user_role");
+if(isadmin==='admin'){
+    document.getElementById("admin").addEventListener('click',()=>{
+        window.location.href='../Admin/adminDashboard.html';
+    });
+ 
+}else{
+    document.getElementById("admin").style.display='none';
+}
 // (function (){
 //     profile();
 // })();
@@ -16,34 +24,35 @@ userId = localStorage.getItem("user_Id");
     var response_data = response;
     console.log(response_data);
     if (response_data.status_code===200){
+        delivered = 0;
+        intransit =0;
         response_data.parcels.forEach(parcel => {
-            delivered = 0;
-            intransit =0;
+            
             if (parcel.status === 'Delivered'){
                 delivered++;
             }
             if (parcel.status === 'intransit'){
                 intransit++;
             }
-
+            
             document.querySelector('tbody').innerHTML+=`
             
             <tr>
             <td>${parcel.parcelid}</td>
-            <td>${parcel.userid}</td>
             <td>${parcel.creation_date}</td>
             <td>${parcel.status}</td>
-            <td>
-                <img src="../images/eye.png" class="view" onclick="display_details()">
-                <img src="../images/edit.png" class="edit" onclick="getId(this)">
-                <img src="../images/trash.png" class="delete" onclick="confirm_delete()">
-            </td>
-        </tr>
+            <td>${parcel.description}</td>
+            </tr>
             
             `
+            
         });
-        console.log(delivered);
-        console.log(intransit);
+        document.querySelector('#delivered').innerHTML=`
+                ${delivered}
+            `
+        document.querySelector('#intransit').innerHTML=`
+            ${intransit}
+        `
     }
     else if(response_data.status_code === 404 || response_data.status_code === 400){
         document.querySelector('table').innerHTML=`

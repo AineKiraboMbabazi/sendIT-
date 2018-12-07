@@ -1,4 +1,14 @@
 token = localStorage.getItem("auth_token")
+isadmin = localStorage.getItem("user_role");
+document.querySelector('.error').style.display='none';
+if(isadmin==='admin'){
+    document.getElementById("admin").addEventListener('click',()=>{
+        window.location.href='../Admin/adminDashboard.html';
+    });
+ 
+}else{
+    document.getElementById("admin").style.display='none';
+}
 function createParcel(x){
     x.preventDefault()
 
@@ -19,16 +29,21 @@ function createParcel(x){
 }).then((response_data) => response_data.json())
 .then((response_data) => {
     if (response_data.status_code === 400){
-       alert(response_data.message);
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        ${response_data.message}
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 2000);
         window.location.href = '../User/createOrder.html';
     }
     console.log(response_data.status_code)
     if (response_data.status_code === 201){
-        alert(response_data.message);
         window.location.href = '../User/orders.html';
     }
     
 }
     )
-.catch(error=>alert("Failed to create parcel Delivery order, try again later")); 
+.catch(error=>{alert(error);}); 
 }
