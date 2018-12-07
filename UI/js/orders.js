@@ -1,5 +1,15 @@
 token = localStorage.getItem("auth_token");
 userId = localStorage.getItem("user_Id");
+isadmin = localStorage.getItem("user_role");
+document.querySelector('.error').style.display='none';
+if(isadmin==='admin'){
+    document.getElementById("admin").addEventListener('click',()=>{
+        window.location.href='../Admin/adminDashboard.html';
+    });
+ 
+}else{
+    document.getElementById("admin").style.display='none';
+}
 
 
     fetch('http://127.0.0.1:5000/api/v1/users/'+userId+'/parcels',{
@@ -11,7 +21,6 @@ userId = localStorage.getItem("user_Id");
 }).then((response) => response.json())
 .then((response) => {
     response_data = response;
-    console.log(response_data);
     
     if (response_data.status_code === 200){
         response_data.parcels.forEach(parcel => {
@@ -35,7 +44,7 @@ userId = localStorage.getItem("user_Id");
         });
     }
     else if (response_data.status_code === 404){
-      
+        
         document.querySelector('table').innerHTML=`
             ${response_data.message}
             `  
@@ -54,8 +63,6 @@ function viewDetails(id){
     return document.location.href=`viewDetails.html`;
 }
 function cancel(id){
-    
-    if(window.confirm("This action will cancel the order, Are you sure you want to continue?")){
         fetch('http://127.0.0.1:5000/api/v1/parcels/'+id,{
         method: 'PUT',
         headers: {
@@ -69,10 +76,19 @@ function cancel(id){
         if (response_data.status_code === 200){
             localStorage.setItem("detailsId",parcelId);
             document.location.href= '../User/viewDetails.html';
+            localStorage.setItem('redirectMessage',response_data.message);
         }
         
         if (response_data.status_code === 400 || response_data.status_code === 404 ){
-            alert(response_data.message);
+            document.querySelector('.error').style.display='block';
+            document.querySelector('.error').innerHTML=`
+            ${response_data.message}
+            `
+            setTimeout(() => {
+                document.querySelector('.error').innerHTML="";
+            }, 2000);
+            document.location.href= '../User/orders.html';
+            
             
         }
     
@@ -81,4 +97,4 @@ function cancel(id){
         )
         
     }
-    }
+    
