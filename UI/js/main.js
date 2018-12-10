@@ -5,8 +5,6 @@ if(localStorage.getItem('auth_token')===null){
     if(page!=='registration.html'||page!=='index.html'|| page!=='login.html'){
         document.location.href='login.html';
     }
-
- 
 }
 
 document.querySelector('#logout').addEventListener('click',()=>{

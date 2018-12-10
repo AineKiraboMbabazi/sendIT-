@@ -83,5 +83,5 @@ function viewDetails(){
     }
 }
     )
-.catch(error=>alert("Failed to get parcel Delivery order details, try again later")); 
+.catch(error=>console.log("Failed to get parcel Delivery order details, try again later")); 
 }

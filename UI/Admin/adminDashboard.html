@@ -17,7 +17,7 @@
             <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-            <img class="icon" src="../images/admin2.png" /><br/><span id="user">admin@admin</span>
+            <img class="icon" src="../images/admin2.png" /><span id="user"></span>admin</span>
             
         </div>
         <nav>
@@ -28,7 +28,7 @@
                 </li>
                 <li>
             
-                    <button id="createOrder">create Order</button>
+                    <button id="createOrder">create </button>
                 </li>
                 <li>
                     <button id="profile">Profile</button>
@@ -44,22 +44,29 @@
     </header>
     <section>
         <article>
-            
+                
                 <div class="table-container" >
-               
+                    
                         <div class="form_container">
                             <div class="form-header">
                                user orders 
+                            </div>
+                            <div class="tabs">
+                                <button class="tabitem" onclick="getParcels1()">All</button>
+                                <button class="tabitem" onclick="getParcels( 'pending')">Pending</button>
+                                <button class="tabitem" onclick="getParcels('intransit')">Intransit</button>
+                                <button class="tabitem" onclick="getParcels( 'Delivered')">Delivered</button>
+                                <button class="tabitem" onclick="getParcels('Cancelled')">Cancelled</button>
                             </div>
                             <table>
                                 <thead>
                                     <td>OrderID</td>
                                     <td>UserID</td>
-                                    <td>Date</td>
+                                    
                                     <td>Pickup</td>
                                     <td>Destination</td>
                                     <td>Status</td>
-                                    <td>Description</td>
+                                    
                                     <td>Present location</td>
                                     <td>Action</td>
                                     <td>Update location</td>

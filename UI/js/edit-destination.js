@@ -11,7 +11,6 @@ if(isadmin==='admin'){
 }
 
 function editDestination(){
-    // el.preventDefault()
     new_destination = document.getElementById("newdestination").value;
     
     var destination = {
@@ -31,6 +30,12 @@ function editDestination(){
 .then((response_data) => {
     console.log(response_data);
     if (response_data.status_code === 201 ){
+        document.querySelector('.message').innerHTML=`
+            ${response_data.message}
+            `
+            setTimeout(() => {
+                document.querySelector('.message').innerHTML="";
+            }, 2000);
         localStorage.setItem("detailsId",parcelId);
         document.location.href= '../User/viewDetails.html';
       
@@ -48,5 +53,5 @@ function editDestination(){
 
 }
     )
-.catch(error=>alert("Failed to create parcel Delivery order, try again later")); 
+.catch(error=>console.log("Failed to create parcel Delivery order, try again later")); 
 }

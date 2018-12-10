@@ -10,6 +10,7 @@ if(isadmin==='admin'){
     document.getElementById("admin").style.display='none';
 }
 function createParcel(x){
+
     x.preventDefault()
 
     var parcel = {
@@ -17,7 +18,7 @@ function createParcel(x){
         destination: document.getElementById("destination").value,
         description: document.getElementById("description").value
     }
-    console.log(parcel['pickup']);
+
     fetch('http://127.0.0.1:5000/api/v1/parcels',{
         method: 'POST',
         body: JSON.stringify(parcel),
@@ -26,8 +27,10 @@ function createParcel(x){
             'Authorization': `Bearer ${token}` 
             
     }
-}).then((response_data) => response_data.json())
-.then((response_data) => {
+    }).then((response_data) => response_data.json())
+    .then((response_data) => {
+        console.log(response_data);
+        
     if (response_data.status_code === 400){
         document.querySelector('.error').style.display='block';
         document.querySelector('.error').innerHTML=`
@@ -35,15 +38,16 @@ function createParcel(x){
         `
         setTimeout(() => {
             document.querySelector('.error').innerHTML="";
-        }, 2000);
+        }, 4000);
         window.location.href = '../User/createOrder.html';
     }
-    console.log(response_data.status_code)
+    
     if (response_data.status_code === 201){
+        console.log('I got here');
         window.location.href = '../User/orders.html';
     }
     
 }
     )
-.catch(error=>{alert(error);}); 
+.catch(error=>{console.log(error);}); 
 }

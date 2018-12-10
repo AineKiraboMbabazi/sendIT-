@@ -28,7 +28,6 @@ if(isadmin==='admin'){
             
             <tr>
             <td>${parcel.parcelid}</td>
-            <td>${parcel.userid}</td>
             <td>${parcel.creation_date}</td>
             <td>${parcel.status}</td>
             <td>
@@ -52,7 +51,7 @@ if(isadmin==='admin'){
 
     
 })
-.catch(error=>alert("unable to retrieve your parcels, please try again later")); 
+.catch(error=>console.log("unable to retrieve your parcels, please try again later")); 
 function editDestination(id){
     localStorage.setItem('editId', id);
     return document.location.href=`edit.html`;

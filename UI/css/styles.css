@@ -39,7 +39,7 @@ button{
     border: none;
     padding: 10px;
     background-color: #040404;
-    color: #c6c6c6;
+    color: white;
     outline: 0;
     text-transform: uppercase;
 } 
@@ -47,15 +47,20 @@ button :hover{
     cursor:pointer;
 }
 .home-page-body{
-    background-image: url('../images/parcel.png');
+    /* background-image: url('../images/parcel.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: #dddddd;
+    opacity: 1;
     height: 100%;
     margin: 0%;
     border:solid 2px #040404;
 }
-
+.or{
+    text-align: center;
+    margin-top: 7%;
+}
 /* page layout css */
 .index-container , .create-order {
     font-style: italic;
@@ -86,6 +91,9 @@ button :hover{
 .profile :hover{
     cursor:pointer;
     font-size: 30px;
+}
+.register{
+    color: blue;
 }
 .create_order{
     font-style: italic; 
@@ -164,13 +172,16 @@ button :hover{
     color:whitesmoke;
     font-family:  tahoma;
     padding-right: 0%;
-    margin-left: 90%;
-    padding-top: 6px;
+    margin-left: 89%;
+    padding-top: 1%;
     height: 75px; 
    
 }
-.login_status #user span {
-    visibility: hidden;
+#user{
+    margin-top: -5%;
+}
+.login_status #user  {
+    padding-top: 0%;
 }
 .login_status #user span :hover{
     visibility: visible;
@@ -189,7 +200,7 @@ button :hover{
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    /* opacity: 0.8; */
+    opacity: 0.8;
     margin-top: 20vh;
     margin-bottom: 13vh;
     background-image: url('../images/tabimg.png');
@@ -197,7 +208,21 @@ button :hover{
     background-size: cover;
     background-position: center;
 }
-
+/* tabs styles */
+.tabs{
+    background-color: black;
+}
+.tabs button{
+    width:15%;
+    display: inline;
+    margin:0% ;
+    background-color: black;
+}
+.tabs :hover{
+    background-color: #bbbbbb;
+    cursor: pointer;
+    color: black;
+}
 /* table styles */
 
 .table-container {
@@ -294,7 +319,11 @@ tfoot td span:hover {
     line-height: 3;
     border:solid 2px gray;
 }
-
+.add-user{
+    text-align: center;
+    margin-top: -1%;
+    padding-top: -1%;
+}
 .details .add-user{
     line-height: 1.5;
 }

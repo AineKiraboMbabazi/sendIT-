@@ -9,9 +9,7 @@ if(isadmin==='admin'){
 }else{
     document.getElementById("admin").style.display='none';
 }
-// (function (){
-//     profile();
-// })();
+
 (function profile(){
     fetch('http://127.0.0.1:5000/api/v1/users/'+userId+'/parcels',{
         method: 'GET',
@@ -62,5 +60,5 @@ if(isadmin==='admin'){
 
     
 })
-.catch(error=>alert("unable to retrieve your parcels, please try again later")); 
+.catch(error=>console.log("unable to retrieve your parcels, please try again later")); 
 })();

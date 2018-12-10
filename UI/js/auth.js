@@ -35,7 +35,7 @@ function register(x){
         `
         setTimeout(() => {
             document.querySelector('.error').innerHTML="";
-        }, 2000);
+        }, 4000);
         window.location.href='../User/login.html';
     }
     else if(response_data.status_code === 400){
@@ -45,15 +45,14 @@ function register(x){
         `
         setTimeout(() => {
             document.querySelector('.error').innerHTML="";
-        }, 2000);
+        }, 4000);
         window.location.href = '../User/registration.html';
 
     }
-    
-    
+  
 }
     )
-.catch(error=>alert("Failed to create account, try again later")); 
+.catch(error=>console.log("Failed to create account, try again later")); 
 }
 
 function login(event){
@@ -62,8 +61,6 @@ function login(event){
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     }
-    console.log(user_credentials['email'])
-    console.log(user_credentials['password'])
     fetch('http://127.0.0.1:5000/api/v1/auth/login',{
         method: 'POST',
         body: JSON.stringify(user_credentials),
@@ -72,9 +69,8 @@ function login(event){
     }
 }).then((response) => response.json())
 .then((response) => {
-    var response_data = response;
-    if (response_data.status_code === 201){
-        console.log(response_data.auth_token);
+    response_data = response;
+    if (response_data.status_code === 200){
         localStorage.setItem("auth_token",response_data.auth_token);
         localStorage.setItem("user_Id",response_data.user_Id);
         
@@ -87,10 +83,7 @@ function login(event){
 
             window.location.href='../User/orders.html';
         }
-        
-        
     }
-    
     else if(response_data.status_code === 401){
         document.querySelector('.error').style.display='block';
         document.querySelector('.error').innerHTML=`
@@ -98,9 +91,8 @@ function login(event){
         `
         setTimeout(() => {
             document.querySelector('.error').innerHTML="";
-        }, 2000);
+        }, 4000);
     }
-    
 })
-.catch(error=>alert("Failed to login to your account, try again later")); 
+.catch(error=>console.log("Failed to login to your account, try again later")); 
 }
