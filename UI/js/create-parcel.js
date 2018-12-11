@@ -29,8 +29,6 @@ function createParcel(x){
     }
     }).then((response_data) => response_data.json())
     .then((response_data) => {
-        console.log(response_data);
-        
     if (response_data.status_code === 400){
         document.querySelector('.error').style.display='block';
         document.querySelector('.error').innerHTML=`
@@ -38,12 +36,18 @@ function createParcel(x){
         `
         setTimeout(() => {
             document.querySelector('.error').innerHTML="";
-        }, 4000);
+        }, 5000);
         window.location.href = '../User/createOrder.html';
     }
     
     if (response_data.status_code === 201){
-        console.log('I got here');
+        document.querySelector('.error').style.display='block';
+        document.querySelector('.error').innerHTML=`
+        ${response_data.message}
+        `
+        setTimeout(() => {
+            document.querySelector('.error').innerHTML="";
+        }, 5000);
         window.location.href = '../User/orders.html';
     }
     

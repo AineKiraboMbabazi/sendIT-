@@ -3,7 +3,7 @@ if(localStorage.getItem('auth_token')===null){
     var path = window.location.pathname;
     var page = path.split("/").pop();
     if(page!=='registration.html'||page!=='index.html'|| page!=='login.html'){
-        document.location.href='login.html';
+        document.location.href='../User/login.html';
     }
 }
 
@@ -31,7 +31,7 @@ function open_orders(){
  return   document.location.href='../User/createOrder.html';
 }
 function redirect_login(){
-    window.location.href='login.html';
+    window.location.href='../User/login.html';
 }
 
 function display_details(){

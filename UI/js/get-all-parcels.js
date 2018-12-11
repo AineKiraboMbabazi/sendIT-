@@ -105,9 +105,7 @@ function confirm_delete(id){
         if (response_data.status_code === 400 ){
             alert(response_data.message);
             
-        }
-    
-        
+        }    
     }
         )
         
