@@ -10,36 +10,62 @@
 </head>
 
 <body class="home-page-body">
-    <header>
-        <div class="header_logo">
-            
-            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
-        </div>
-        <div class="login_status">
-                <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
+
+    <header >
+            <div class="header_logo">
                 
-        </div>
-        <nav>
-            <ul>
-                <li>
-            
-                    <button id="createOrder">create Order</button>
-                </li>
-                <li>
-                    <button id="profile">Profile</button>
-                </li>
-                <li>
-                        <button id="admin">Admin</button>
+                <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+            </div>
+            <div class="login_status">
+                    <img class="icon" src="../images/admin2.png" /><span id="user">user</span>
+                    
+            </div>
+    
+                <a href="#" class="navicon" onclick="showDropdown();"></a>
+            <nav class="topnav" id="mytopnav">
+                <ul>
+                    <li>
+                        <a href="../Admin/adminDashboard.html"><button class="admin">Dashboard</button></a>
                     </li>
-                <li>
-                    <button id="orders">Orders</button>
-                </li>
-                <li>
-                    <button id="logout">Logout</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                    <li>
+                
+                        <a href='../User/createOrder.html'><button class="createOrder">create </button></a>
+                    </li>
+                    <li>
+                        <a href='../User/profile.html'><button class="profiles">Profile</button></a>
+                    </li>
+                    
+                    <li>
+                        <a href='../User/orders.html'><button class="orders">Orders</button></a>
+                    </li>
+                    <li>
+                        <button id="logout">Logout</button>
+                    </li>
+                </ul>
+            </nav>
+            <div id="mobile" class="mobile">
+                    <button class="close"><img src="../images/cancel.png" alt="" onclick="closeNav()"></button>
+                    <ul>
+                        <li>
+                
+                            <button id="admin">Dashboard</button>
+                        </li>
+                        <li>
+                    
+                            <button id="createOrder">create </button>
+                        </li>
+                        <li>
+                            <button id="profiles">Profile</button>
+                        </li>
+                        <li>
+                            <button id="orders">Orders</button>
+                        </li>
+                        <li>
+                            <button id="logout">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+        </header>
     <section>
         <article>
             
@@ -50,29 +76,28 @@
                     <div class="form-header">
                         Edit delivery order
                     </div>
-                    <form>
-                        <div class="message">
-
-                        </div>
-                        <div class="error">
+                    <table>
+                            <tbody >
                             
-                        </div>
-
-                        <div class="input_group">
-                            
-                            <input type="text" name="new destination" id="newdestination" placeholder="new destination" required>
-
-                        </div>
-                        <div><button type="submit" onclick="editDestination(event)"> Edit</button></div>
-                        
-                    </form>
+                            </tbody>    
+                    </table>
                 </div>
 
             </div>
 
         </article>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.14.0"></script>
+    <script>
+
+        var placesAutocomplete = places({
+            appId: "plK0HNF6HEDI",
+            apiKey: "00ba9691055f5f004745de4f8a0d7683",
+            container: document.getElementById("newdestination")
+        });
+    </script>
     <script src="../js/main.js"></script>
+    <script src="../js/edit-parcel.js"></script>
     <script src="../js/edit-destination.js"></script>
 </body>
 

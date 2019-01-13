@@ -9,6 +9,7 @@ if(isadmin==='admin'){
  
 }else{
     document.getElementById("admin").style.display='none';
+    document.getElementsByClassName("admin").style.display='none';
 }
 btb.addEventListener('click',function(e){
     
@@ -49,7 +50,7 @@ btb.addEventListener('click',function(e){
     }
 }
     )
-.catch(error=>alert("Failed to set present location, try again later")); 
+.catch(error=>console.log("Failed to set present location, try again later")); 
 }
 
 )

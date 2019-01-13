@@ -17,10 +17,35 @@
             <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-            <img class="icon" src="../images/admin2.png" /><br/><span id="user">admin@admin</span>
+            <img class="icon" src="../images/admin2.png" />
+            <span id="user">admin</span>
             
         </div>
-        <nav>
+        <!-- <img src="../images/menu.png" class="navicon" onclick="showDropdown();" /> -->
+        <a href="#" class="navicon" onclick="showDropdown();"></a>
+        <nav class="topnav" id="mytopnav">
+            <ul>
+                <li>
+                    <a href="../Admin/adminDashboard.html"><button class="admin">Dashboard</button></a>
+                </li>
+                <li>
+            
+                    <a href='../User/createOrder.html'><button class="createOrder">create </button></a>
+                </li>
+                <li>
+                    <a href='../User/profile.html'><button class="profiles">Profile</button></a>
+                </li>
+                
+                <li>
+                    <a href='../User/orders.html'><button class="orders">Orders</button></a>
+                </li>
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+            </ul>
+        </nav>
+        <div id="mobile" class="mobile">
+            <button class="close"><img src="../images/cancel.png" alt="" onclick="closeNav()"></button>
             <ul>
                 <li>
         
@@ -28,10 +53,10 @@
                 </li>
                 <li>
             
-                    <button id="createOrder">create Order</button>
+                    <button id="createOrder">create </button>
                 </li>
                 <li>
-                    <button id="profile">Profile</button>
+                    <button id="profiles">Profile</button>
                 </li>
                 <li>
                     <button id="orders">Orders</button>
@@ -40,29 +65,33 @@
                     <button id="logout">Logout</button>
                 </li>
             </ul>
-        </nav>
+        </div>
     </header>
     <section>
         <article>
-            
+                
                 <div class="table-container" >
-               
+                    
                         <div class="form_container">
                             <div class="form-header">
-                               user orders 
+                               users orders 
+                            </div>
+                            <div class="tabs">
+                                <button class="tabitem" onclick="getParcels1()">All</button>
+                                <button class="tabitem" onclick="getParcels( 'pending')">Pending</button>
+                                <button class="tabitem" onclick="getParcels('intransit')">Intransit</button>
+                                <button class="tabitem" onclick="getParcels( 'Delivered')">Delivered</button>
+                                <button class="tabitem" onclick="getParcels('Cancelled')">Cancelled</button>
+                                <button class="tabitem" onclick="getParcels('Deleted')">Deleted</button>
                             </div>
                             <table>
                                 <thead>
                                     <td>OrderID</td>
                                     <td>UserID</td>
-                                    <td>Date</td>
                                     <td>Pickup</td>
                                     <td>Destination</td>
-                                    <td>Status</td>
-                                    <td>Description</td>
                                     <td>Present location</td>
                                     <td>Action</td>
-                                    <td>Update location</td>
                                 </thead>
                                 <tbody class="dashboard">
                                 </tbody>
@@ -76,6 +105,7 @@
     </section>
     <script src="../js/main.js"></script>
     <script src="../js/get-all-parcels.js"></script>
+
 </body>
 
 </html>

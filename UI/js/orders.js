@@ -21,22 +21,20 @@ if(isadmin==='admin'){
 }).then((response) => response.json())
 .then((response) => {
     response_data = response;
-    
+   
+    console.log(response.parcelId);
     if (response_data.status_code === 200){
         response_data.parcels.forEach(parcel => {
             document.querySelector('tbody').innerHTML+=`
             
             <tr>
             <td>${parcel.parcelid}</td>
-            <td>${parcel.userid}</td>
-            <td>${parcel.creation_date}</td>
+            <td>${parcel.creation_date.slice(0,16)}</td>
             <td>${parcel.status}</td>
             <td>
                 <img src="../images/eye.png" class="view" onclick="viewDetails(${parcel.parcelid})">
                 <img src="../images/edit.png" class="edit" onclick="editDestination(${parcel.parcelid});">
-                <button id="1" onclick="cancel(${parcel.parcelid}); ">
-                    Cancel
-                </button>
+                <img src="../images/cancel.png" onclick="cancel(${parcel.parcelid}); ">
             </td>
         </tr>
             
@@ -52,15 +50,15 @@ if(isadmin==='admin'){
 
     
 })
-.catch(error=>alert("unable to retrieve your parcels, please try again later")); 
+.catch(error=>console.log("unable to retrieve your parcels, please try again later")); 
 function editDestination(id){
     localStorage.setItem('editId', id);
-    return document.location.href=`edit.html`;
+    return document.location.href=`edit.html?id=${id}`;
 
 }
 function viewDetails(id){
     localStorage.setItem('detailsId', id);
-    return document.location.href=`viewDetails.html`;
+    return document.location.href=`viewDetails.html?id=${id}`;
 }
 function cancel(id){
         fetch('http://127.0.0.1:5000/api/v1/parcels/'+id,{
@@ -86,7 +84,7 @@ function cancel(id){
             `
             setTimeout(() => {
                 document.querySelector('.error').innerHTML="";
-            }, 2000);
+            }, 90000);
             document.location.href= '../User/orders.html';
             
             

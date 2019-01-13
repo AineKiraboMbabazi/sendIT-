@@ -11,36 +11,61 @@
 </head>
 
 <body class="home-page-body">
-    <header>
-        <div class="header_logo">
-            
-            <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
-        </div>
-        <div class="login_status">
-                <img class="icon" src="../images/admin2.png" /><br/><span id="user">user@test.com</span>
+
+    <header >
+            <div class="header_logo">
                 
-        </div>
-        <nav>
-            <ul>
-                <li>
-            
-                    <button id="createOrder">create Order</button>
-                </li>
-                <li>
-                    <button id="profile">Profile</button>
-                </li>
-                <li>
-                        <button id="admin">Admin</button>
+                <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
+            </div>
+            <div class="login_status">
+                    <img class="icon" src="../images/admin2.png" /><span id="user">user</span>
+                    
+            </div>
+    
+                <a href="#" class="navicon" onclick="showDropdown();"></a>
+            <nav class="topnav" id="mytopnav">
+                <ul>
+                    <li>
+                        <a href="../Admin/adminDashboard.html"><button class="admin">Dashboard</button></a>
                     </li>
-                <li>
-                    <button id="orders">Orders</button>
-                </li>
-                <li>
-                    <button id="logout">Logout</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                    <li>
+                
+                        <a href='../User/createOrder.html'><button class="createOrder">create </button></a>
+                    </li>
+                    <li>
+                        <a href='../User/profile.html'><button class="profiles">Profile</button></a>
+                    </li>
+                    
+                    <li>
+                        <a href='../User/orders.html'><button class="orders">Orders</button></a>
+                    </li>
+                    <li>
+                        <button id="logout">Logout</button>
+                    </li>
+                </ul>
+            </nav>
+            <div id="mobile" class="mobile">
+                    <ul>
+                        <li>
+                
+                            <button id="admin">Dashboard</button>
+                        </li>
+                        <li>
+                    
+                            <button id="createOrder">create </button>
+                        </li>
+                        <li>
+                            <button id="profiles">Profile</button>
+                        </li>
+                        <li>
+                            <button id="orders">Orders</button>
+                        </li>
+                        <li>
+                            <button id="logout">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+        </header>
     <section>
         <article>
            
