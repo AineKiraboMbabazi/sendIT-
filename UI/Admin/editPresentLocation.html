@@ -10,36 +10,62 @@
 </head>
 
 <body class="home-page-body">
-    <header>
+<header>
         <div class="header_logo">
             
             <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-                <img class="icon" src="../images/admin2.png" /><br/><span id="user">admin@admin.com</span>
-                
+            <img class="icon" src="../images/admin2.png" />
+            <span id="user">admin</span>
+            
         </div>
-        <nav>
+        <a href="#" class="navicon" onclick="showDropdown();"></a>
+        <nav class="topnav" id="mytopnav">
             <ul>
                 <li>
+                    <a href="../Admin/adminDashboard.html"><button class="admin">Dashboard</button></a>
+                </li>
+                <li>
             
-                    <button id="createOrder">create Order</button>
+                    <a href='../User/createOrder.html'><button class="createOrder">create </button></a>
                 </li>
                 <li>
-                    <button id="profile">Profile</button>
+                    <a href='../User/profile.html'><button class="profiles">Profile</button></a>
                 </li>
+                
                 <li>
-                        <button id="admin">Admin</button>
-                    </li>
-                <li>
-                    <button id="orders">Orders</button>
+                    <a href='../User/orders.html'><button class="orders">Orders</button></a>
                 </li>
                 <li>
                     <button id="logout">Logout</button>
                 </li>
             </ul>
         </nav>
+        <div id="mobile" class="mobile">
+                <button class="close"><img src="../images/cancel.png" alt="" onclick="closeNav()"></button>
+                <ul>
+                    <li>
+            
+                        <button id="admindashboard">Dashboard</button>
+                    </li>
+                    <li>
+                
+                        <button id="createOrder">create </button>
+                    </li>
+                    <li>
+                        <button id="profiles">Profile</button>
+                    </li>
+                    <li>
+                        <button id="orders">Orders</button>
+                    </li>
+                    <li>
+                        <button id="logout">Logout</button>
+                    </li>
+                </ul>
+            </div>
     </header>
+   
     <section>
         <article>
             
@@ -50,18 +76,11 @@
                     <div class="form-header">
                         Edit Present Location
                     </div>
-                    <form>
-                        <div class="error">
-                            
-                        </div>
-                        <div class="input_group">
-                           
-                            <input type="text" name=" Present Location" id="presentdestination" placeholder="Present Location" required>
-                        </div>
-
-                        <div><button type="submit" id="submit"> Set</button></div>
-                        
-                    </form>
+                    <table>
+                        <tbody>
+                            </tbody>
+                       
+                    </table>
                 </div>
 
             </div>
@@ -70,6 +89,7 @@
     </section>
     <script src="../js/main.js"></script>
     <script src="../js/edit-presentlocation.js"></script>
+    <script src="../js/editlocation.js"></script>
 </body>
 
 </html>

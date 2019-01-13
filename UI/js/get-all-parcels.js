@@ -12,17 +12,14 @@ function getParcels(status_type){
             <td>${parcel.userid}</td>
             <td>${parcel.pickup}</td>
             <td>${parcel.destination}</td>
-            <td>${parcel.status}</td>
+            
             <td>${parcel.present_location}</td>
             <td>
                 <img src="../images/eye.png" class="view" onclick="viewDetails(${parcel.parcelid})">
                 <img src="../images/trash.png" class="delete" onclick="confirm_delete(${parcel.parcelid})">
+                <img src="../images/edit.png" onclick="enter_location(${parcel.parcelid}); ">
             </td>
-            <td>
-                <button id="1" onclick="enter_location(${parcel.parcelid}); ">
-                    Set
-                </button>
-            </td>
+            
         </tr>
             
             `
@@ -50,18 +47,15 @@ function getParcels(status_type){
                 
                 <td>${parcel.pickup}</td>
                 <td>${parcel.destination}</td>
-                <td>${parcel.status}</td>
+                
                 
                 <td>${parcel.present_location}</td>
                 <td>
                     <img src="../images/eye.png" class="view" onclick="viewDetails(${parcel.parcelid})">
                     <img src="../images/trash.png" class="delete" onclick="confirm_delete(${parcel.parcelid})">
+                    <img src="../images/edit.png" onclick="enter_location(${parcel.parcelid}); ">
                 </td>
-                <td>
-                    <button id="1" onclick="enter_location(${parcel.parcelid}); ">
-                        Set
-                    </button>
-                </td>
+                
             </tr>
                 
                 `
@@ -79,16 +73,18 @@ function getParcels(status_type){
     function viewDetails(id){
         localStorage.setItem('detailsId', id);
         localStorage.setItem('redirectMessage', "Parcel Details");
-        return document.location.href=`../User/viewDetails.html`;
+        return document.location.href=`../User/viewDetails.html?id=${id}`;
     }
     function enter_location(id){
         localStorage.setItem('editId', id);
-        return document.location.href=`editPresentLocation.html`;
+        return document.location.href=`editPresentLocation.html?id=${id}`;
     }
 
 function confirm_delete(id){
-        fetch('http://127.0.0.1:5000/api/v1/parcels/'+id,{
-        method: 'DELETE',
+    
+        if(confirm('Are you sure you want to delete this field?')){
+            fetch('http://127.0.0.1:5000/api/v1/parcels/'+id+'/delete',{
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}` 
@@ -98,7 +94,7 @@ function confirm_delete(id){
     .then((response_data) => {
         console.log(response_data);
         if (response_data.status_code === 200){
-            
+            alert(response_data.message);
             document.location.href='../Admin/adminDashboard.html';
         }
         
@@ -109,5 +105,4 @@ function confirm_delete(id){
     }
         )
         
-    }
-    
+    }}

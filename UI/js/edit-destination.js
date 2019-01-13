@@ -8,6 +8,7 @@ if(isadmin==='admin'){
  
 }else{
     document.getElementById("admin").style.display='none';
+    document.getElementsByClassName("admin").style.display='none';
 }
 
 function editDestination(){
@@ -28,14 +29,13 @@ function editDestination(){
     }
 }).then((response_data) => response_data.json())
 .then((response_data) => {
-    console.log(response_data);
     if (response_data.status_code === 201 ){
         document.querySelector('.message').innerHTML=`
             ${response_data.message}
             `
             setTimeout(() => {
                 document.querySelector('.message').innerHTML="";
-            }, 2000);
+            }, 10000);
         localStorage.setItem("detailsId",parcelId);
         document.location.href= '../User/viewDetails.html';
       
@@ -47,7 +47,7 @@ function editDestination(){
             `
             setTimeout(() => {
                 document.querySelector('.error').innerHTML="";
-            }, 2000);
+            }, 10000);
             document.location.href= '../User/orders.html';
     }
 

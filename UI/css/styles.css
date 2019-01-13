@@ -7,9 +7,11 @@ header {
     margin-bottom: 0;
     opacity: 0.8;
 }
-nav{
-    margin-left: 35%;
-    
+.dropdown{
+    display: none;
+}
+nav {
+    margin-left: 20%;
     margin-top: -5%;
 }
 nav li button{
@@ -17,7 +19,13 @@ nav li button{
     position: relative;
     
 }
-
+nav ul li a{
+    text-decoration: none;
+}
+nav button:hover{
+    background-color: #c6c6c6;
+    color: black;
+}
 nav ul li{
     float: left;
     color: whitesmoke;
@@ -26,8 +34,14 @@ nav ul li{
     list-style: none;
     
 }
-nav button :hover{
+nav button:hover{
     border:2px #c6c6c6;
+}
+.navicon{
+    display: none;
+}
+.mobile{
+    display: none;
 }
 button{
     display: block;
@@ -43,19 +57,21 @@ button{
     outline: 0;
     text-transform: uppercase;
 } 
-button :hover{
+button:hover{
     cursor:pointer;
 }
 .home-page-body{
-    /* background-image: url('../images/parcel.png');
+    background-image: url('../images/image.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
-    background-color: #dddddd;
-    opacity: 1;
+    background-position: center;
+    opacity: 0.9;
+    
+    /* background-color:#BEBEBE; */
+    opacity:1;
     height: 100%;
     margin: 0%;
-    border:solid 2px #040404;
+    /* border:solid 2px #040404; */
 }
 .or{
     text-align: center;
@@ -95,16 +111,7 @@ button :hover{
 .register{
     color: blue;
 }
-.create_order{
-    font-style: italic; 
-    font-family: tahoma;
-    font-size: 26px;
-    margin-left: 10%;
-    border:solid 2px #040404;
-    margin-right:5%;
-    margin-top: 3%;
-    width: 15%; 
-}
+
 .message{
     text-align: center;
     font-style: italic; 
@@ -173,16 +180,21 @@ button :hover{
     font-family:  tahoma;
     padding-right: 0%;
     margin-left: 89%;
-    padding-top: 1%;
+    margin-top:0%;
     height: 75px; 
+    text-align: center;
    
 }
-#user{
-    margin-top: -5%;
+.login_status img{
+    margin-top: 8%;
+    border: 2px solid white;
+    border-radius: 50%;
 }
-.login_status #user  {
-    padding-top: 0%;
+.login_status span{
+    padding-top: -15%;
+    border: rgb(226, 12, 12);
 }
+
 .login_status #user span :hover{
     visibility: visible;
 }
@@ -192,8 +204,7 @@ button :hover{
 }
 .login-container{
     border: solid 2px black;
-    /* padding-top: 0vh;
-    padding-bottom: 0vh; */
+
     margin-left: 3px;
     width: 35%;
     height: 55vh;
@@ -209,6 +220,7 @@ button :hover{
     background-position: center;
 }
 /* tabs styles */
+
 .tabs{
     background-color: black;
 }
@@ -229,11 +241,9 @@ button :hover{
     border: solid 2px black;
     /* overflow-x: scroll; */
     overflow-y: auto;
-    /* padding-top: 0vh;
-    padding-bottom: 0vh; */
+
     width: 80%;
-    padding:3px;
-    /* height: 80vh; */
+
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -246,14 +256,27 @@ button :hover{
     background-size: cover;
     background-position: center; 
 }
+.location{
+    width: 100%;
+}
+.edit td{
+    padding-left: 8.8%;
 
+}
+.close img{
+    background-color: white;
+}
 table{
     width: 100%;
-    /* border-collapse: collapse;   */
+    margin: auto;
+    border-collapse: collapse;  
 }
 
 thead{
     background-color: #aaa;
+}
+tr{
+    text-align: center;
 }
 tr:nth-child(even){
     background-color: #f2f2f2;
@@ -263,41 +286,13 @@ tr:hover {
     background-color: #ddd;
     
 }
-td {
-    padding-left: 15px;
-}
-tfoot td{
-    margin-left: 95%;
-    
+td{
+    margin: auto;
 }
 td img{
     margin: 10px;
 }
-tfoot td span{
-    margin-right: 10px;
-    background-color: #aaa;
-    font-size: 20px;
-    height: 37px;
-    border:solid 2px #040404;
-}
-tfoot td .create_order {
-    width: 30%;
-    height: 37px;
-    font-size: 20px;
-    background-color: #aaa;
-    border: none;
-}
-tfoot td .create_order :hover {
-    width: 30%;
-    height: 37px;
-    font-size: 20px;
-    background-color: #aaa;
-    
-}
-tfoot td span:hover {
-    background-color: #aaa;
-  
-}
+
 .details{
     border: solid 2px black;
     padding-top: 0vh;
@@ -319,11 +314,12 @@ tfoot td span:hover {
     line-height: 3;
     border:solid 2px gray;
 }
-.add-user{
+/* .add-user{
     text-align: center;
     margin-top: -1%;
     padding-top: -1%;
-}
+    margin-bottom: 5%;
+} */
 .details .add-user{
     line-height: 1.5;
 }
@@ -358,19 +354,20 @@ input{
     text-align: center;
     background-color: #040404;
     color: whitesmoke;
-    padding: 15px;
     text-transform: uppercase;
-    position: relative;
-    scroll-behavior: unset;
+     padding: 15px;
+    /* position: relative; 
+    scroll-behavior: unset; */
    
     
 }
 .add-user{
     
-    padding-left: 5%;
+    /* padding-left: 5%;
     margin-right:5%;
-    margin-top:3%;
-    margin-bottom:2.5%;
+    /* margin-top:3%; */
+    text-align: center;
+    padding-bottom:5%; 
     padding-top: 10px;
 }
 .add-user img{
@@ -386,10 +383,19 @@ input{
     color: #040404;
     margin-left:8%;
 }
+.algolia-places{
+    width: 86%;
+    margin-left: 2.85%;
+    
+}
 #edit {
-    margin-top: 15%;
-    height: 55%;
+    /* margin-top: 15%; */
+    height: 70%;
     margin-bottom: 20%;
+    
+}
+#edit tr{
+    text-align: none;
 }
 .add-user a :hover{
     text-decoration: none;
@@ -442,11 +448,93 @@ tbody select{
     color: black;
     height: 40px;
 }
+section{
+    transition: margin-right .5s;
+    padding: 16px;
+}
+.show{
+    /* margin-top: 13%; */
+    display: block;
+    height: 75%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #040404;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 
-
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 414px) {
     header{
         height: 20%;
+    }
+    .navicon {
+        position: relative;
+        font-family: sans-serif;
+        color: white;
+        text-decoration: none;
+        background: black;
+        border-radius: 4px;
+        margin-top: -15%;
+        display: inline-block;
+        float: left;
+        margin-left: 45%;
+    }
+    /* header{
+        height: 25%;
+    } */
+    .navicon:before {
+        position: absolute;
+        /* top: 50%; */
+        left: .75em;
+        width: .8em;
+        height: .9em;
+        margin-top: -.4em;
+        content: '';
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAABkCAMAAACCTv/3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////5ubmueBsSwAAAAJ0Uk5T/wDltzBKAAAAPklEQVR42uzYQQ0AAAgDseHfNC4IyVoD912WAACUm3uampqampqamq+aAAD+IVtTU1NTU1NT0z8EAFBsBRgAX+kR+Qam138AAAAASUVORK5CYII=);
+        }
+    .mobile button{
+       
+        background-color: #040404;
+        color: white;
+        text-transform: uppercase;
+    } 
+    nav{
+        display: none;
+    }
+    .mobile{
+        margin-left: 0%;
+        position: absolute;
+        
+    }
+    .mobile li button{
+        display: block;
+    }
+    .mobile ul li
+    {
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-right: 3%;
+        list-style: none;
+    }
+    .dropdown{
+        margin-left: 0%;
+        width: 15%;
+        float: left;
+        display: block;
+        border: solid 2px whitesmoke;
     }
     .login_status{
         opacity: 0;
@@ -480,8 +568,7 @@ tbody select{
     width: 50%;
     height: 55vh;
     position: relative;
-    
-    margin-top: 60vh;
+    /* margin-top: 60vh; */
     margin-bottom: 13vh;
    
 }
@@ -491,11 +578,13 @@ nav button{
     margin-right: 1%;
     float: none;
 }
-
-    .logo_item{
+.navicon {
+    margin-left: 70%;
+}
+    /* .logo_item{
         width: 70vw;
         margin: auto;
-    }
+    } */
     .index-container{
         line-height: 2;
         font-size: 24px;
@@ -505,7 +594,7 @@ nav button{
         padding-top: 0vh;
         padding-bottom: 0vh;
         width: 90%;
-        height: 55vh;
+        height: 100%;
         position: relative;
         
         margin-top: 20vh;
@@ -513,14 +602,6 @@ nav button{
        
     }
 
-    .add-user{
-    
-        padding-left: 5%;
-        margin-right:15%;
-        margin-top:3%;
-        margin-bottom:2.5%;
-        padding-top: 10px;
-    }
     .profile img, .create_order img{
         padding-right: 0%;
        
@@ -543,6 +624,154 @@ nav button{
     width:20%;
 }
 
+}
+
+@media (min-width: 481px) and (max-width: 680px) {
+    .login-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 50%;
+        height: 55vh;
+        position: relative;
+        
+        margin-top: 20vh;
+        margin-bottom: 13vh;
+       
+    }
+    .form-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        /* margin-top: 60vh; */
+        margin-bottom: 13vh;
+       
+    }
+    .table-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 50%;
+        height: 55vh;
+        position: relative;
+        /* margin-top: 40vh; */
+        margin-bottom: 13vh;
+       
+    }
+    .intransit-card{
+        margin-left:60% ; 
+        margin-top: -30%; 
+      }
+    .card img , .intransit-card img{
+        width: 40px;
+        margin-left: 0px;
+        height: 40px;
+        position: relative;
+    }
+    
+    .navicon {
+        /* This is all that's required */
+        position: relative;
+        /* This just makes it look like a button for the demo */
+        font-family: sans-serif;
+        color: white;
+        text-decoration: none;
+        background: black;
+        border-radius: 4px;
+        padding: .5em .75em .5em 2em;
+        display: inline-block;
+        margin-top: 3%;
+        margin-left: 45%;
+    }
+    header{
+        height: 25%;
+    }
+    .navicon:before {
+        position: absolute;
+        top: 50%;
+        left: .75em;
+        width: .8em;
+        height: .9em;
+        margin-top: -.4em;
+        content: '';
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAABkCAMAAACCTv/3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////5ubmueBsSwAAAAJ0Uk5T/wDltzBKAAAAPklEQVR42uzYQQ0AAAgDseHfNC4IyVoD912WAACUm3uampqampqamq+aAAD+IVtTU1NTU1NT0z8EAFBsBRgAX+kR+Qam138AAAAASUVORK5CYII=);
+        }
+    .mobile button{
+       
+        background-color: #040404;
+        color: white;
+        text-transform: uppercase;
+    } 
+    nav{
+        display: none;
+    }
+    .mobile{
+        margin-left: 0%;
+    }
+    .mobile li button{
+        display: block;
+    }
+    .mobile ul li
+    {
+        color: whitesmoke;
+        text-transform: uppercase;
+        margin-right: 3%;
+        list-style: none;
+    }
+    .dropdown{
+        margin-left: 0%;
+        width: 15%;
+        float: left;
+        display: block;
+        border: solid 2px whitesmoke;
+    }
+    .login_status{
+        display: none;
+    }
+    .intransit-card{
+        margin-left:60% ; 
+        margin-top: -25%;                                                                
+      }
+}
+@media only screen and (max-width: 1099px) {
+    .login-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 50%;
+        height: 55vh;
+        position: relative;
+        
+        margin-top: 20vh;
+        margin-bottom: 13vh;
+       
+    }
+    .table-container{
+        border: solid 2px black;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+        width: 75%;
+        height: 55vh;
+        position: relative;
+        /* margin-top: 42vh; */
+        margin-bottom: 13vh;
+       
+    }
+    .intransit-card{
+        margin-left:55% ; 
+        margin-top: -28%; 
+      }
+    .card img , .intransit-card img{
+        width: 40px;
+        margin-left: 0px;
+        height: 40px;
+        position: relative;
+    }
 }
 @media only screen and (max-width: 1100px) {
     .login-container{
@@ -613,24 +842,22 @@ nav button{
         margin-top: -3%;
         margin-left: 70%
      }
-     .create_order{
-         margin-top: 3%;
-         width:20%;
-     }
-    .add-user{
-    
-    padding-left: 5%;
-    margin-right:30%;
-    margin-top:3%;
-    margin-bottom:2.5%;
-    padding-top: 10px;
+
 }
-    .add-user{
-    
-    padding-left: 5%;
-    margin-right:15%;
-    margin-top:3%;
-    margin-bottom:2.5%;
-    padding-top: 10px;
-}
-}
+/*
+/*desktops - higher resolution*/
+/* @media (min-width: 1281px) */
+
+/*laptops, desktops*/
+/* @media (min-width: 1025px) and (max-width: 1280px)  */
+
+/*tablets, ipads (portrait)*/
+/* @media (min-width: 768px) and (max-width: 1024px) */
+
+/*tablets, ipads (landscape)*/
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) */
+
+/*low resolution tablets, mobiles (landscape)*/
+/* @media (min-width: 481px) and (max-width: 767px) */
+
+/*smartphones mobiles (portrait)*/

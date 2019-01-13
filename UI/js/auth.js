@@ -71,6 +71,7 @@ function login(event){
 .then((response) => {
     response_data = response;
     if (response_data.status_code === 200){
+        console.log('response_data.auth_token');
         localStorage.setItem("auth_token",response_data.auth_token);
         localStorage.setItem("user_Id",response_data.user_Id);
         

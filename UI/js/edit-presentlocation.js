@@ -9,6 +9,7 @@ if(isadmin==='admin'){
  
 }else{
     document.getElementById("admin").style.display='none';
+    document.getElementsByClassName("admin").style.display='none';
 }
 btb.addEventListener('click',function(e){
     

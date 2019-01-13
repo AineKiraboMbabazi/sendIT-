@@ -11,27 +11,54 @@
 </head>
 
 <body class="home-page-body">
-    <header>
+    
+    <header >
         <div class="header_logo">
             
             <a href="../index.html"><h1><span class="logo_item">SendIT</span></h1></a>
         </div>
         <div class="login_status">
-                <img class="icon" src="../images/admin2.png" /><span id="user">user</span>
+                <img class="icon" src="../images/admin2.png" /><span id="user">user</span>    
+        </div>
+
+        <a href="#" class="navicon" onclick="showDropdown();"></a>
+        <nav class="topnav" id="mytopnav">
+            <ul>
+                <li>
+                    <a href="../Admin/adminDashboard.html"><button class="admin">Dashboard</button></a>
+                </li>
+                <li>
+            
+                    <a href='../User/createOrder.html'><button class="createOrder">create </button></a>
+                </li>
+                <li>
+                    <a href='../User/profile.html'><button class="profiles">Profile</button></a>
+                </li>
                 
-            </div>
-            <nav>
+                <li>
+                    <a href='../User/orders.html'><button class="orders">Orders</button></a>
+                </li>
+                <li>
+                    <button id="logout">Logout</button>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="mobile" class="mobile">
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> -->
+                <button class="close"><img src="../images/cancel.png" alt="" onclick="closeNav()"></button>
                 <ul>
+                        
                     <li>
             
-                        <button id="createOrder">create Order</button>
+                        <button id="admin">Dashboard</button>
                     </li>
                     <li>
-                        <button id="profile">Profile</button>
+                        <button id="createOrder">create </button>
                     </li>
                     <li>
-                            <button id="admin">Admin</button>
-                        </li>
+                        <button id="profiles">Profile</button>
+                    </li>
                     <li>
                         <button id="orders">Orders</button>
                     </li>
@@ -39,7 +66,7 @@
                         <button id="logout">Logout</button>
                     </li>
                 </ul>
-            </nav>
+            </div>
     </header>
     <section>
         <article>
@@ -47,7 +74,7 @@
             
             <div class="login-container" id="edit" >
                
-                <div class="form_container">
+                <div class="form_container" class="location" >
                     <div class="form-header">
                         Create delivery order
                     </div>
@@ -57,12 +84,12 @@
                             </div>
                         <div class="input_group">
                            
-                            <input type="text" name="pickuplocation" id="pickuplocation" placeholder="pickup location" required>
+                            <input type="search" name="pickuplocation" id="pickuplocation" placeholder="pickup location" required>
                         </div>
 
                         <div class="input_group">
                             
-                            <input type="text" name="destination" id="destination" placeholder="destination" required>
+                            <input type="text" name="destination"  id="destination" placeholder="destination" required>
 
                         </div>
                         <div class="input_group">
@@ -79,8 +106,25 @@
 
         </article>
     </section>
-    <script src="../js/create-parcel.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/create-parcel.js"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAtCe1kU0Y8l5_9HxaPfLdO8schmZXuRg&libraries=places&callback=placesAutocomplete&region=UG"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.14.0"></script>
+    <script>
+        var placesAutocomplete = places({
+            appId: "plK0HNF6HEDI",
+            apiKey: "00ba9691055f5f004745de4f8a0d7683",
+            container: document.getElementById("pickuplocation")
+        });
+        var placesAutocomplete = places({
+            appId: "plK0HNF6HEDI",
+            apiKey: "00ba9691055f5f004745de4f8a0d7683",
+            container: document.getElementById("destination")
+        });
+    </script>
+    
+    
+    
 </body>
 
 </html>
